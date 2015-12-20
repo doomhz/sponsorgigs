@@ -1,0 +1,70 @@
+{
+  "development" : {
+    "app_url": "http://localhost:5000",
+    "app_host": "localhost:5000",
+    "mysql": {
+      "database": "spgs_dev",
+      "user": "root",
+      "password": "",
+      "port": 3306,
+      "host": "localhost",
+      "logging": true
+    },
+    "session": {
+      "cookie_secret": "secretkey",
+      "session_key": "spgs",
+      "cookie": {
+        "maxAge": 2592000000,
+        "path": "/",
+        "httpOnly": true,
+        "secure": false
+      }
+    },
+    "emailer": {
+      "enabled": false,
+      "host": "http://localhost:5000",
+      "from": "SponsorGigs.com <contact@sponsorgigs.com>",
+      "transport": {
+        "host": "email-smtp.us-east-1.amazonaws.com",
+        "port": 465,
+        "secure": true,
+        "auth": {
+          "user": "",
+          "pass": ""
+        },
+        "debug": true
+      }
+    },
+    "contact_email": ""
+  },
+  "production" : {
+    "app_url": "http://localhost:5000",
+    "app_host": "localhost:5000",
+    "mysql": {
+      "db": "spgs_prod",
+      "user": "root",
+      "password": "",
+      "port": 3306,
+      "host": "localhost",
+      "logging": true
+    },
+    "emailer": {
+      "enabled": true,
+      "host": "http://localhost:5000",
+      "from": "SPonsorGigs.com <contact@sponsorgigs.com>",
+      "transport": {
+        "host": "email-smtp.us-east-1.amazonaws.com",
+        "port": 465,
+        "secure": true,
+        "auth": {
+          "user": "",
+          "pass": ""
+        },
+        "debug": true
+      }
+    },
+    "contact_email": "",
+    "assets_host": "",
+    "fonts_host": ""
+  }
+}
