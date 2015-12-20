@@ -12,8 +12,6 @@ builtAssets
 tools/*.log
 config.json
 config/*.json
-config/wallets_config/*.json
-config/wallets_config/*.payouts
 errors.dump
 logs.dump
 .vagrant
@@ -23,7 +21,6 @@ img.digest
 
 public/css/*
 public/js/app
-public/js/casino
 public/js/*.js
 
 crons/*.js
