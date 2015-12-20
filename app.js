@@ -24,6 +24,7 @@ var app = express();
 var cookieParser  = cookieParser(GLOBAL.appConfig().session.cookie_secret);
 // var sessionStore = new MySQLSessionStore(GLOBAL.appConfig().mysql)
 
+require("./lib/assets")(app);
 app.enable("trust proxy");
 app.disable('x-powered-by');
 app.set('port', process.env.PORT || 5000);
@@ -57,6 +58,7 @@ app.use(function(err, req, res, next) {
 
 // Routes
 require('./routes/site')(app);
+require('./routes/events')(app);
 require('./routes/errors')(app);
 
 

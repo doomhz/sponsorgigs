@@ -1,0 +1,511 @@
+extends ../layout
+
+block content
+  .main
+    .main-inner
+      .container
+        .content
+          .document-title
+            h1 Events
+            ul.breadcrumb
+              li
+                a(href='/') SponsorGigs
+              li
+                a(href='/events/row') Events
+          // /.document-title
+          
+          form.filter(method='post', action='?')
+            .row
+              .col-sm-12.col-md-4
+                .form-group
+                  input.form-control(type='text', placeholder='Keyword')
+                // /.form-group
+              // /.col-*
+              .col-sm-12.col-md-4
+                .form-group
+                  select.form-control(title='Select Location')
+                    option Bronx
+                    option Brooklyn
+                    option Manhattan
+                    option Staten Island
+                    option Queens
+                // /.form-group
+              // /.col-*
+              .col-sm-12.col-md-4
+                .form-group
+                  select.form-control(title='Select Category')
+                    option(value='') Automotive
+                    option(value='') Jobs
+                    option(value='') Nightlife
+                    option(value='') Services
+                // /.form-group
+              // /.col-*
+            // /.row
+            hr
+            .row
+              .col-sm-8
+                .filter-actions
+                  a(href='#')
+                    i.fa.fa-close
+                    |  Reset Filter
+                  a(href='#')
+                    i.fa.fa-save
+                    |  Save Search
+                // /.filter-actions
+              // /.col-*
+              .col-sm-4
+                button.btn.btn-primary(type='submit') Redefine Search Result
+              // /.col-*
+            // /.row
+
+          h2.page-title
+            | 1802 results matching your query
+            form.filter-sort(method='get', action='?')
+              .form-group
+                select(title='Sort by')
+                  option(name='price') Price
+                  option(name='rating') Rating
+                  option(name='title') Title
+              // /.form-group
+              .form-group
+                select(title='Order')
+                  option(name='ASC') Asc
+                  option(name='DESC') Desc
+            // /.form-group
+          // /.page-title
+          .cards-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-1.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-1.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Vacation
+                  // /.card-row-label
+                  .card-row-price $100 / night
+                  // 
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Trip To Paris, France
+                  .card-row-content
+                    p
+                      | And why did 'I' have to take a cab? Bender, quit destroying the universe! I've been there. My folks were always on me to groom myself and...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Price
+                    dt $100 / night
+                    dd Category
+                    dt Vacation
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-2.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-2.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Coffee
+                  // /.card-row-label
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Tasty Brazil Coffee
+                  .card-row-content
+                    p
+                      | What are you hacking off? Is it my torso?! 'It is!' My precious torso! You guys realize you live in a sewer, right? Who am I making this ...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Category
+                    dt Coffee
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-3.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-3.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Food
+                  // /.card-row-label
+                  .card-row-price $12 / person
+                  // 
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Healthy Breakfast
+                  .card-row-content
+                    p
+                      | Well, then good news! It's a suppository. It's toe-tappingly tragic! Moving along… Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cr...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Price
+                    dt $12 / person
+                    dd Category
+                    dt Food
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-4.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-4.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Restaurant
+                  // /.card-row-label
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Coffee & Newspaper
+                  .card-row-content
+                    p
+                      | Pansy. No! I want to live! There are still too many things I don't own! And then the battle's not so bad? And I'd do it again! And perhap...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Category
+                    dt Restaurant
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-5.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-5.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Vacation
+                  // /.card-row-label
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Boat Trip
+                  .card-row-content
+                    p
+                      | Shut up and take my money! Stop! Don't shoot fire stick in space canoe! Cause explosive decompression! You know the worst thing about bei...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Category
+                    dt Vacation
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-6.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-6.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Restaurant
+                  // /.card-row-label
+                  .card-row-price $28 / person
+                  // 
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Italian Restaurant
+                  .card-row-content
+                    p
+                      | I daresay that Fry has discovered the smelliest object in the known universe! I saw you with those two 'ladies of the evening' at Elzars....
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Price
+                    dt $28 / person
+                    dd Category
+                    dt Restaurant
+                    dd Location
+                    dt
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-7.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-7.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Pub
+                  // /.card-row-label
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Best Brazil Coffee
+                  .card-row-content
+                    p
+                      | I love this planet! I've got wealth, fame, and access to the depths of sleaze that those things bring. Now, now. Perfectly symmetrical vi...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Category
+                    dt Pub
+                    dd Location
+                    dt
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-8.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-8.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Shop
+                  // /.card-row-label
+                  .card-row-price $3 / cup
+                  // 
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Retro Shop
+                  .card-row-content
+                    p
+                      | Stop! Don't shoot fire stick in space canoe! Cause explosive decompression! Shut up and get to the point! Bender, we're trying our best. ...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Price
+                    dt $3 / cup
+                    dd Category
+                    dt Shop
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-9.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-9.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Event
+                  // /.card-row-label
+                  .card-row-price $13 / ticket
+                  // 
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Wine Tasting
+                  .card-row-content
+                    p
+                      | Why would I want to know that? One hundred dollars. Noooooo! You can crush me but you can't crush my spirit! Oh, how awful. Did he at lea...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Price
+                    dt $13 / ticket
+                    dd Category
+                    dt Event
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-10.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-10.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Coworking
+                  // /.card-row-label
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Affordable Office
+                  .card-row-content
+                    p
+                      | Why, those are the Grunka-Lunkas! They work here in the Slurm factory. No, she'll probably make me do it. When will that be? File not fou...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Category
+                    dt Coworking
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-11.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-11.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Food
+                  // /.card-row-label
+                  .card-row-price $8 / person
+                  // 
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Quick Breakfast
+                  .card-row-content
+                    p
+                      | Ah, the 'Breakfast Club' soundtrack! I can't wait til I'm old enough to feel ways about stuff! If rubbin' frozen dirt in your crotch is w...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Price
+                    dt $8 / person
+                    dd Category
+                    dt Food
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+            .card-row
+              .card-row-inner
+                .card-row-image(data-background-image="#{CDN('/theme/img/tmp/product-12.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-12.jpg", true)}')
+                  .card-row-label
+                    a(href='/events/3/micro-marathon') Landmark
+                  // /.card-row-label
+                // /.card-row-image
+                .card-row-body
+                  h2.card-row-title
+                    a(href='/events/3/micro-marathon') Monumental City
+                  .card-row-content
+                    p
+                      | Ven ve voke up, ve had zese wodies. No! I want to live! There are still too many things I don't own! Hey, what kinda party is this? There...
+                  // /.card-row-content
+                // /.card-row-body
+                .card-row-properties
+                  dl
+                    dd Category
+                    dt Landmark
+                    dd Location
+                    dt New York / Village
+                    dd Rating
+                    dt
+                      .card-row-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-row-rating
+                // /.card-row-properties
+              // /.card-row-inner
+            // /.card-row
+          // /.cards-row
+          .pager
+            ul
+              li
+                a(href='#') Prev
+              li
+                a(href='#') 5
+              li.active
+                a 6
+              li
+                a(href='#') 7
+              li
+                a(href='#') Next
+          // /.pagination
+        // /.content
+      // /.container
+    // /.main-inner

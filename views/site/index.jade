@@ -1,5 +1,991 @@
 extends ../layout
 
 block content
-  .container
-    | Sponsor a gig now!
+  .main
+    .main-inner
+      .content
+        .mt-80
+          .hero-image
+            .hero-image-inner(style="background-image: url(#{CDN('/theme/img/tmp/slider-large-3.jpg')};")
+              .hero-image-content
+                .container
+                  h1 Sponsor events
+                  p
+                    | Sponsor events or get funds for your own.
+                  a.btn.btn-primary.btn-lg(href='/events') Sponsor events
+                  a.btn.btn-secondary.btn-lg(href='/events/add') Add your event
+                // /.container
+              // /.hero-image-content
+              .hero-image-form-wrapper
+                .container
+                  .row
+                    .col-sm-4.col-sm-offset-8.col-lg-4.col-lg-offset-7
+                      form(method='get', action='/events')
+                        h2 Start Searching
+                        .hero-image-keyword.form-group
+                          input.form-control(type='text', placeholder='Keyword')
+                        // /.form-group
+                        .hero-image-location.form-group
+                          select.form-control(title='Location')
+                            option Bronx
+                            option Brooklyn
+                            option Manhattan
+                            option Staten Island
+                            option Queens
+                        // /.form-group
+                        .hero-image-category.form-group
+                          select.form-control(title='Category')
+                            option(value='') Automotive
+                            option(value='') Jobs
+                            option(value='') Nightlife
+                            option(value='') Services
+                        // /.form-group
+                        .hero-image-price.form-group
+                          input.form-control(type='text', placeholder='Min. Price')
+                        // /.form-group
+                        button.btn.btn-primary.btn-block(type='submit') Search
+                    // /.col-*
+                  // /.row
+                // /.container
+              // /.hero-image-form-wrapper
+            // /.hero-image-inner
+          // /.hero-image
+        .container
+          
+          //- .block.background-white.fullwidth.pt0.pb0
+          //-   .partners
+          //-     a(href='#')
+          //-       img(src="#{CDN('theme/img/tmp/partner-1.jpg', true)}")
+          //-     a(href='#')
+          //-       img(src="#{CDN('theme/img/tmp/partner-2.jpg', true)}")
+          //-     a(href='#')
+          //-       img(src="#{CDN('theme/img/tmp/partner-3.jpg', true)}")
+          //-     a(href='#')
+          //-       img(src="#{CDN('theme/img/tmp/partner-4.jpg', true)}")
+          //-     a(href='#')
+          //-       img(src="#{CDN('theme/img/tmp/partner-5.jpg', true)}")
+          //-   // /.partners
+          
+          .page-header
+            h1 Most Recent Events
+            p
+              | Last submitted events on our platform. 
+              br
+              | Check them out and choose one to invest!
+          // /.page-header
+          .cards-simple-wrapper
+            .row
+              .col-sm-6.col-md-3
+                .card-simple(data-background-image="#{CDN('theme/img/tmp/product-2.jpg', true)}", style='background-image: url(#{CDN("theme/img/tmp/product-2.jpg", true)}')
+                  .card-simple-background
+                    .card-simple-content
+                      h2
+                        a(href='/events/1/tasty-coffee') Tasty Brazil Coffee
+                      .card-simple-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-rating
+                      .card-simple-actions
+                        a.fa.fa-bookmark-o(href='#')
+                        a.fa.fa-search(href='/events/1/tasty-coffee')
+                        a.fa.fa-heart-o(href='#')
+                      // /.card-simple-actions
+                    // /.card-simple-content
+                    .card-simple-label Coffee
+                  // /.card-simple-background
+                // /.card-simple
+              // /.col-*
+              .col-sm-6.col-md-3
+                .card-simple(data-background-image="#{CDN('theme/img/tmp/product-3.jpg', true)}", style='background-image: url(#{CDN("theme/img/tmp/product-3.jpg", true)}')
+                  .card-simple-background
+                    .card-simple-content
+                      h2
+                        a(href='/events/2/healthy-breakfast') Healthy Breakfast
+                      .card-simple-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-rating
+                      .card-simple-actions
+                        a.fa.fa-bookmark-o(href='#')
+                        a.fa.fa-search(href='/events/2/healthy-breakfast')
+                        a.fa.fa-heart-o(href='#')
+                      // /.card-simple-actions
+                    // /.card-simple-content
+                    .card-simple-label Food
+                    .card-simple-price $12 / person
+                  // /.card-simple-background
+                // /.card-simple
+              // /.col-*
+              .col-sm-6.col-md-3
+                .card-simple(data-background-image="#{CDN('theme/img/tmp/product-4.jpg', true)}", style='background-image: url(#{CDN("theme/img/tmp/product-4.jpg", true)}')
+                  .card-simple-background
+                    .card-simple-content
+                      h2
+                        a(href='/events/3/coffee-newspaper') Coffee & Newspaper
+                      .card-simple-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-rating
+                      .card-simple-actions
+                        a.fa.fa-bookmark-o(href='#')
+                        a.fa.fa-search(href='/events/3/coffee-newspaper')
+                        a.fa.fa-heart-o(href='#')
+                      // /.card-simple-actions
+                    // /.card-simple-content
+                    .card-simple-label Restaurant
+                  // /.card-simple-background
+                // /.card-simple
+              // /.col-*
+              .col-sm-6.col-md-3
+                .card-simple(data-background-image="#{CDN('theme/img/tmp/product-5.jpg', true)}", style='background-image: url(#{CDN("theme/img/tmp/product-5.jpg", true)}')
+                  .card-simple-background
+                    .card-simple-content
+                      h2
+                        a(href='/events/4/boat-trip') Boat Trip
+                      .card-simple-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-rating
+                      .card-simple-actions
+                        a.fa.fa-bookmark-o(href='#')
+                        a.fa.fa-search(href='/events/4/boat-trip')
+                        a.fa.fa-heart-o(href='#')
+                      // /.card-simple-actions
+                    // /.card-simple-content
+                    .card-simple-label Vacation
+                  // /.card-simple-background
+                // /.card-simple
+              // /.col-*
+              .col-sm-6.col-md-3
+                .card-simple(data-background-image="#{CDN('theme/img/tmp/product-6.jpg', true)}", style='background-image: url(#{CDN("theme/img/tmp/product-6.jpg", true)}')
+                  .card-simple-background
+                    .card-simple-content
+                      h2
+                        a(href='/events/5/italian-restaurant') Italian Restaurant
+                      .card-simple-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-rating
+                      .card-simple-actions
+                        a.fa.fa-bookmark-o(href='#')
+                        a.fa.fa-search(href='/events/5/italian-restaurant')
+                        a.fa.fa-heart-o(href='#')
+                      // /.card-simple-actions
+                    // /.card-simple-content
+                    .card-simple-label Restaurant
+                    .card-simple-price $28 / person
+                  // /.card-simple-background
+                // /.card-simple
+              // /.col-*
+              .col-sm-6.col-md-3
+                .card-simple(data-background-image="#{CDN('theme/img/tmp/product-7.jpg', true)}", style='background-image: url(#{CDN("theme/img/tmp/product-7.jpg", true)}')
+                  .card-simple-background
+                    .card-simple-content
+                      h2
+                        a(href='/events/6/best-coffee') Best Brazil Coffee
+                      .card-simple-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-rating
+                      .card-simple-actions
+                        a.fa.fa-bookmark-o(href='#')
+                        a.fa.fa-search(href='/events/6/best-coffee')
+                        a.fa.fa-heart-o(href='#')
+                      // /.card-simple-actions
+                    // /.card-simple-content
+                    .card-simple-label Pub
+                  // /.card-simple-background
+                // /.card-simple
+              // /.col-*
+              .col-sm-6.col-md-3
+                .card-simple(data-background-image="#{CDN('theme/img/tmp/product-8.jpg', true)}", style='background-image: url(#{CDN("theme/img/tmp/product-8.jpg", true)}')
+                  .card-simple-background
+                    .card-simple-content
+                      h2
+                        a(href='/events/7/retro-shop') Retro Shop
+                      .card-simple-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-rating
+                      .card-simple-actions
+                        a.fa.fa-bookmark-o(href='#')
+                        a.fa.fa-search(href='/events/7/retro-shop')
+                        a.fa.fa-heart-o(href='#')
+                      // /.card-simple-actions
+                    // /.card-simple-content
+                    .card-simple-label Shop
+                    .card-simple-price $3 / cup
+                  // /.card-simple-background
+                // /.card-simple
+              // /.col-*
+              .col-sm-6.col-md-3
+                .card-simple(data-background-image="#{CDN('theme/img/tmp/product-9.jpg', true)}", style='background-image: url(#{CDN("theme/img/tmp/product-9.jpg", true)}')
+                  .card-simple-background
+                    .card-simple-content
+                      h2
+                        a(href='/events/8/wine-tasting') Wine Tasting
+                      .card-simple-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.card-rating
+                      .card-simple-actions
+                        a.fa.fa-bookmark-o(href='#')
+                        a.fa.fa-search(href='/events/8/wine-tasting')
+                        a.fa.fa-heart-o(href='#')
+                      // /.card-simple-actions
+                    // /.card-simple-content
+                    .card-simple-label Event
+                    .card-simple-price $13 / ticket
+                  // /.card-simple-background
+                // /.card-simple
+              // /.col-*
+            // /.row
+          // /.cards-simple-wrapper
+          
+          //- .block.background-white.fullwidth.mt80
+          //-   .row
+          //-     .col-sm-6
+          //-       .posts
+          //-         .post
+          //-           .post-image
+          //-             img(src="#{CDN('theme/img/tmp/product-6.jpg', true)}")
+          //-             a.read-more(href='blog-detail-right-sidebar.html') View
+          //-           // /.post-image
+          //-           .post-content
+          //-             .post-label Automotive
+          //-             // /.post-label
+          //-             .post-date 07/12/2015
+          //-             // /.post-date
+          //-             h2 The Deep South
+          //-             p
+          //-               | Oh, all right, I am. But if anything happens to me, tell them I died robbing some old man. Calculon is gonna kill us and it's a...
+          //-           // /.post-content
+          //-         // /.post
+          //-         .post
+          //-           .post-image
+          //-             img(src="#{CDN('theme/img/tmp/product-8.jpg', true)}")
+          //-             a.read-more(href='blog-detail-right-sidebar.html') View
+          //-           // /.post-image
+          //-           .post-content
+          //-             .post-label Transport
+          //-             // /.post-label
+          //-             .post-date 06/18/2015
+          //-             // /.post-date
+          //-             h2 Raging Bender
+          //-             p
+          //-               | For one beautiful night I knew what it was like to be a grandmother. Subjugated, yet honored. Then throw her in the laundry roo...
+          //-           // /.post-content
+          //-         // /.post
+          //-         .post
+          //-           .post-image
+          //-             img(src="#{CDN('theme/img/tmp/product-10.jpg', true)}")
+          //-             a.read-more(href='blog-detail-right-sidebar.html') View
+          //-           // /.post-image
+          //-           .post-content
+          //-             .post-label Vacation
+          //-             // /.post-label
+          //-             .post-date 05/26/2015
+          //-             // /.post-date
+          //-             h2 The Prisoner of Benda
+          //-             p
+          //-               | Check it out, y'all. Everyone who was invited is here. Well, thanks to the Internet, I'm now bored with. Is there a place on th...
+          //-           // /.post-content
+          //-         // /.post
+          //-       // /.posts
+          //-     // /.col-*
+          //-     .col-sm-6
+          //-       .events
+          //-         .event
+          //-           .event-date
+          //-             span.day 28
+          //-             span.month APR
+          //-           // /.event-date
+          //-           .event-content
+          //-             h2 Cras cursus augue at porttitor
+          //-             p Nulla ac lectus posuere, rhoncus dui sed, finibus tellus. Proin enim mi.
+          //-             .event-time
+          //-               i.fa.fa-clock-o
+          //-               |  8:00PM - 11:00PM
+          //-             // /.event-time
+          //-           // /.event-content
+          //-         // /.event
+          //-         .event
+          //-           .event-date
+          //-             span.day 18
+          //-             span.month OCT
+          //-           // /.event-date
+          //-           .event-content
+          //-             h2 Fusce pulvinar quam odio
+          //-             p Nulla ac lectus posuere, rhoncus dui sed, finibus tellus. Proin enim mi.
+          //-             .event-time
+          //-               i.fa.fa-clock-o
+          //-               |  12:00AM - 2:00PM
+          //-             // /.event-time
+          //-           // /.event-content
+          //-         // /.event
+          //-         .event
+          //-           .event-date
+          //-             span.day 22
+          //-             span.month FEB
+          //-           // /.event-date
+          //-           .event-content
+          //-             h2 Cras libero justo, fringilla in quam
+          //-             p Nulla ac lectus posuere, rhoncus dui sed, finibus tellus. Proin enim mi.
+          //-             .event-time
+          //-               i.fa.fa-clock-o
+          //-               |  10:00AM - 6:00PM
+          //-             // /.event-time
+          //-           // /.event-content
+          //-         // /.event
+          //-         .event
+          //-           .event-date
+          //-             span.day 28
+          //-             span.month AUG
+          //-           // /.event-date
+          //-           .event-content
+          //-             h2 Phasellus vitae velit sit
+          //-             p Nulla ac lectus posuere, rhoncus dui sed, finibus tellus. Proin enim mi.
+          //-             .event-time
+          //-               i.fa.fa-clock-o
+          //-               |  8:00PM - 10:00PM
+          //-             // /.event-time
+          //-           // /.event-content
+          //-         // /.event
+          //-       // /.events
+          //-     // /.col-*
+          //-   // /.row
+          //- // /.block
+          //- .block.background-black-light.fullwidth
+          //-   .row
+          //-     .col-sm-4
+          //-       .box
+          //-         .box-icon
+          //-           i.fa.fa-life-ring
+          //-         // /.box-icon
+          //-         .box-content
+          //-           h2 E-mail Support
+          //-           p We are always here to answer all your questions. Feel free to contact us.
+          //-           a(href='#')
+          //-             | Read More 
+          //-             i.fa.fa-chevron-right
+          //-         // /.box-content
+          //-     // /.col-sm-4
+          //-     .col-sm-4
+          //-       .box
+          //-         .box-icon
+          //-           i.fa.fa-flask
+          //-         // /.box-icon
+          //-         .box-content
+          //-           h2 Always Improving
+          //-           p Our dedicated team of developers are implementing awesome features.
+          //-           a(href='#')
+          //-             | Read More 
+          //-             i.fa.fa-chevron-right
+          //-         // /.box-content
+          //-     // /.col-sm-4
+          //-     .col-sm-4
+          //-       .box
+          //-         .box-icon
+          //-           i.fa.fa-thumbs-o-up
+          //-         // /.box-icon
+          //-         .box-content
+          //-           h2 Best Quality
+          //-           p We list only verifiend places and events to provide best content.
+          //-           a(href='#')
+          //-             | Read More 
+          //-             i.fa.fa-chevron-right
+          //-         // /.box-content
+          //-     // /.col-sm-4
+          //-   // /.row
+          //- // /.block
+          
+          //- .block.background-white.background-transparent-image.fullwidth
+          //-   .page-header
+          //-     h1 Hand Picked by Superlist
+          //-     p
+          //-       | Check out the best places & events in the city. Each one is worth
+          //-       br
+          //-       |  of visiting. Experience which you never forget.
+          //-   // /.page-header
+          //-   .cards-wrapper
+          //-     .row
+          //-       .col-sm-8
+          //-         .row
+          //-           .col-sm-12
+          //-             .card(data-background-image='#{CDN("theme/img/tmp/product-7.jpg", true)}', style='background-image: url(#{CDN("theme/img/tmp/product-7.jpg", true)});')
+          //-               .card-label
+          //-                 a(href='listing-detail.html') Coffe
+          //-               // /.card-label
+          //-               .card-content
+          //-                 h2
+          //-                   a(href='listing-detail.html') Brazilian Coffe Taste
+          //-                 .card-meta
+          //-                   i.fa.fa-map-o
+          //-                   |  347/26 22th Avenue, NYC USA
+          //-                 // /.card-meta
+          //-                 .card-rating
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                 // /.card-rating
+          //-                 .card-actions
+          //-                   a.fa.fa-bookmark-o(href='#')
+          //-                   a.fa.fa-search(href='listing-detail.html')
+          //-                   a.fa.fa-heart-o(href='#')
+          //-               // /.card-content
+          //-             // /.card
+          //-           // /.col-*
+          //-         // /.row
+          //-         .row
+          //-           .col-sm-6
+          //-             .card(data-background-image='#{CDN("theme/img/tmp/product-4.jpg", true)}', style='background-image: url(#{CDN("theme/img/tmp/product-4.jpg", true)});')
+          //-               .card-label
+          //-                 a(href='listing-detail.html') Restaurant
+          //-               // /.card-label
+          //-               .card-content
+          //-                 h2
+          //-                   a(href='listing-detail.html') Coffee & Newspaper
+          //-                 .card-meta
+          //-                   i.fa.fa-map-o
+          //-                   |  347/26 22th Avenue, NYC USA
+          //-                 // /.card-meta
+          //-                 .card-rating
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                 // /.card-rating
+          //-                 .card-actions
+          //-                   a.fa.fa-bookmark-o(href='#')
+          //-                   a.fa.fa-search(href='listing-detail.html')
+          //-                   a.fa.fa-heart-o(href='#')
+          //-               // /.card-content
+          //-             // /.card
+          //-           .col-sm-6
+          //-             .card(data-background-image='#{CDN("theme/img/tmp/product-2.jpg", true)}', style='background-image: url(#{CDN("theme/img/tmp/product-2.jpg", true)});')
+          //-               .card-label
+          //-                 a(href='listing-detail.html') Vacation
+          //-               // /.card-label
+          //-               .card-content
+          //-                 h2
+          //-                   a(href='listing-detail.html') Homemade Coffee
+          //-                 .card-meta
+          //-                   i.fa.fa-map-o
+          //-                   |  347/26 22th Avenue, NYC USA
+          //-                 // /.card-meta
+          //-                 .card-rating
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                   i.fa.fa-star
+          //-                 // /.card-rating
+          //-                 .card-actions
+          //-                   a.fa.fa-bookmark-o.marked(href='#')
+          //-                   a.fa.fa-search(href='listing-detail.html')
+          //-                   a.fa.fa-heart-o(href='#')
+          //-               // /.card-content
+          //-             // /.card
+          //-           // /.col-*
+          //-         // /.row
+          //-       // /.col-*
+          //-       .col-sm-4
+          //-         .card.card-tall(data-background-image='#{CDN("theme/img/tmp/product-1.jpg", true)}', style='background-image: url(#{CDN("theme/img/tmp/product-1.jpg", true)});')
+          //-           .card-label
+          //-             a(href='listing-detail.html') Vacation
+          //-           // /.card-label
+          //-           .card-content
+          //-             h2
+          //-               a(href='listing-detail.html') Trip to Paris, France
+          //-             .card-meta
+          //-               i.fa.fa-map-o
+          //-               |  347/26 22th Avenue, NYC USA
+          //-             // /.card-meta
+          //-             .card-rating
+          //-               i.fa.fa-star
+          //-               i.fa.fa-star
+          //-               i.fa.fa-star
+          //-               i.fa.fa-star
+          //-               i.fa.fa-star
+          //-             // /.card-rating
+          //-             .card-actions
+          //-               a.fa.fa-bookmark-o(href='#')
+          //-               a.fa.fa-search(href='listing-detail.html')
+          //-               a.fa.fa-heart-o.marked(href='#')
+          //-           // /.card-content
+          //-         // /.card
+          //-       // /.col-*
+          //-     // /.row
+          //-   // /.cards-wrapper
+          
+          .block.background-white.fullwidth
+            .page-header
+              h1 Testimonials
+              p
+                | Read what our customers says about our directory services and products.
+            // /.page-header
+            .row
+              .col-sm-6
+                .testimonial
+                  .testimonial-image
+                    img(src="#{CDN('theme/img/tmp/agent-1.jpg', true)}")
+                  // /.testimonial-image
+                  .testimonial-inner
+                    .testimonial-title
+                      h2 Exactly What I Need
+                      .testimonial-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.testimonial-rating
+                    // /.testimonial-title
+                    | Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. Donec vel enim sit amet lorem vulputate condimentum.
+                    .testimonial-sign - Fiona Wilson
+                    // /.testimonial-sign
+                  // /.testimonial-inner
+                // /.testimonial
+                .testimonial
+                  .testimonial-image
+                    img(src="#{CDN('theme/img/tmp/agent-2.jpg', true)}")
+                  // /.testimonial-image
+                  .testimonial-inner
+                    .testimonial-title
+                      h2 Best Support Ever
+                      .testimonial-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.testimonial-rating
+                    // /.testimonial-title
+                    | Duis et magna vel est tempus vehicula vitae sit amet enim. Sed vitae ligula congue, luctus mauris eu, scelerisque felis.
+                    .testimonial-sign - Natasha Samson
+                    // /.testimonial-sign
+                  // /.testimonial-inner
+                // /.testimonial
+                .testimonial.last
+                  .testimonial-image
+                    img(src="#{CDN('theme/img/tmp/agent-3.jpg', true)}")
+                  // /.testimonial-image
+                  .testimonial-inner
+                    .testimonial-title
+                      h2 Best Directory
+                      .testimonial-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.testimonial-rating
+                    // /.testimonial-title
+                    | Duis et magna vel est tempus vehicula vitae sit amet enim. Sed vitae ligula congue, luctus mauris eu, scelerisque felis.
+                    .testimonial-sign - Kim Glove
+                    // /.testimonial-sign
+                  // /.testimonial-inner
+                // /.testimonial
+              // /.col-*
+              .col-sm-6
+                .testimonial
+                  .testimonial-image
+                    img(src="#{CDN('theme/img/tmp/agent-4.jpg', true)}")
+                  // /.testimonial-image
+                  .testimonial-inner
+                    .testimonial-title
+                      h2 Totally Impressed
+                      .testimonial-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.testimonial-rating
+                    // /.testimonial-title
+                    | Curabitur scelerisque nulla consequat elit semper, vitae lobortis velit tempor. Sed purus eros, pellentesque non maximus scelerisque, aliquam id magna. Integer in metus ante. Integer faucibus mi quis rhoncus cursus.
+                    .testimonial-sign - Richard Peterson
+                    // /.testimonial-sign
+                  // /.testimonial-inner
+                // /.testimonial
+                .testimonial.last
+                  .testimonial-image
+                    img(src="#{CDN('theme/img/tmp/agent-5.jpg', true)}")
+                  // /.testimonial-image
+                  .testimonial-inner
+                    .testimonial-title
+                      h2 Awesome Directory 
+                      .testimonial-rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      // /.testimonial-rating
+                    // /.testimonial-title
+                    | Donec finibus consectetur nunc, quis viverra nisi iaculis a. Donec non eros vel turpis bibendum sodales. Curabitur scelerisque nulla consequat elit semper, vitae lobortis velit tempor. Sed purus eros, pellentesque non maximus scelerisque, aliquam id magna. Integer in metus ante. Integer faucibus mi quis rhoncus cursus. Aliquam malesuada eleifend tellus, sit amet eleifend lacus aliquam in. Etiam a neque ut augue mattis gravida vel vel purus. Nullam bibendum viverra enim, in pretium purus.
+                    .testimonial-sign - Rachel Fast
+                    // /.testimonial-sign
+                  // /.testimonial-inner
+                // /.testimonial
+              // /.col-*
+          .page-header
+            h1 Fair Pricing
+            p
+              | Our company offers best pricing options for field agents and companies. If you are interested 
+              br
+              | in special plan don't hesitate and contact our 
+              a(href='#') sales support
+              | .
+          // /.page-header
+          .pricings
+            .row
+              .col-sm-4
+                .pricing
+                  .pricing-title Personal
+                  // /.pricing-title
+                  .pricing-subtitle For Personal Use
+                  // /.pricing-subtitle
+                  .pricing-price
+                    span.pricing-currency $
+                    | 10.59 
+                    span.pricing-period / month
+                  // /.pricing-price
+                  a.btn-primary(href='#') Get Started
+                  hr
+                  ul.pricing-list
+                    li
+                      span Max. Submissions
+                      strong Limited number
+                    li
+                      span Custom Agents
+                      strong One agent for all
+                    li
+                      span Support
+                      strong Mail communication
+                  // /.pricing-list
+                  hr
+                  a.pricing-action(href='#') Full List of Features
+                // /.pricing
+              // /.col-*
+              .col-sm-4
+                .pricing
+                  .pricing-title Business
+                  // /.pricing-title
+                  .pricing-subtitle Best for Companies
+                  // /.pricing-subtitle
+                  .pricing-price
+                    span.pricing-currency $
+                    | 19.59 
+                    span.pricing-period / month
+                  // /.pricing-price
+                  a.btn-primary(href='#') Get Started
+                  hr
+                  ul.pricing-list
+                    li
+                      span Max. Submissions
+                      strong Unlimited number
+                    li
+                      span Custom Agents
+                      strong One agent for all
+                    li
+                      span Support
+                      strong Mail communication
+                  // /.pricing-list
+                  hr
+                  a.pricing-action(href='#') Full List of Features
+                // /.pricing
+              // /.col-*
+              .col-sm-4
+                .pricing
+                  .pricing-title Unlimited
+                  // /.pricing-title
+                  .pricing-subtitle Entrepreneurs
+                  // /.pricing-subtitle
+                  .pricing-price
+                    span.pricing-currency $
+                    | 49.59 
+                    span.pricing-period / month
+                  // /.pricing-price
+                  a.btn-primary(href='#') Get Started
+                  hr
+                  ul.pricing-list
+                    li
+                      span Max. Submissions
+                      strong Unlimited number
+                    li
+                      span Custom Agents
+                      strong Unlimited number
+                    li
+                      span Support
+                      strong Personal training
+                  // /.pricing-list
+                  hr
+                  a.pricing-action(href='#') Full List of Features
+                // /.pricing
+              // /.col-*
+            // /.row
+          // /.pricings
+
+          //- .block.background-white.fullwidth.mt80.mb-80
+          //-   .categories
+          //-     ul
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-bed
+          //-           |  Stay
+          //-         ul
+          //-           li
+          //-             a(href='#') Homestay
+          //-             | ,
+          //-           li
+          //-             a(href='#') Hotel
+          //-             | ,
+          //-           li
+          //-             a(href='#') Camping
+          //-             | ,
+          //-           li
+          //-             a(href='#') Guesthouse,
+          //-           li
+          //-             a(href='#') Hostel
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-car
+          //-           |  Automotive
+          //-         ul
+          //-           li
+          //-             a(href='#') Mechanics
+          //-             | ,
+          //-           li
+          //-             a(href='#') Gas Stations
+          //-             | ,
+          //-           li
+          //-             a(href='#') Parts
+          //-             | ,
+          //-           li
+          //-             a(href='#') Repair
+          //-             | ,
+          //-           li
+          //-             a(href='#') Tires
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-suitcase
+          //-           |  Jobs
+          //-         ul
+          //-           li
+          //-             a(href='#') Cook
+          //-             | ,
+          //-           li
+          //-             a(href='#') Hairdrasser
+          //-             | ,
+          //-           li
+          //-             a(href='#') Management
+          //-             | ,
+          //-           li
+          //-             a(href='#') Waiter
+          //-             | ,
+          //-           li
+          //-             a(href='#') Worker
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-heart
+          //-           |  Medicine
+          //-         ul
+          //-           li
+          //-             a(href='#') Dental
+          //-             | ,
+          //-           li
+          //-             a(href='#') Dermatology
+          //-             | ,
+          //-           li
+          //-             a(href='#') Neurology
+          //-             | ,
+          //-           li
+          //-             a(href='#') Pediatrics
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-glass
+          //-           |  Nightlife
+          //-         ul
+          //-           li
+          //-             a(href='#') Bars & Pubs
+          //-             | ,
+          //-           li
+          //-             a(href='#') Concert
+          //-             | ,
+          //-           li
+          //-             a(href='#') Cinemas
+          //-             | ,
+          //-           li
+          //-             a(href='#') Disco
+          //-             | ,
+          //-           li
+          //-             a(href='#') Theater
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-home
+          //-           |  Real Estate
+          //-         ul
+          //-           li
+          //-             a(href='#') Apartmant
+          //-             | ,
+          //-           li
+          //-             a(href='#') Building Area
+          //-             | ,
+          //-           li
+          //-             a(href='#') Condo
+          //-             | ,
+          //-           li
+          //-             a(href='#') House
+          //-             | ,
+          //-           li
+          //-             a(href='#') Villa
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-cutlery
+          //-           |  Restaurant
+          //-         ul
+          //-           li
+          //-             a(href='#') Bistro
+          //-             | ,
+          //-           li
+          //-             a(href='#') Brunch
+          //-             | ,
+          //-           li
+          //-             a(href='#') Caffee
+          //-             | ,
+          //-           li
+          //-             a(href='#') Dinning
+          //-             | ,
+          //-           li
+          //-             a(href='#') Fast Food
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-futbol-o
+          //-           |  Sports
+          //-         ul
+          //-           li
+          //-             a(href='#') Bistro
+          //-             | ,
+          //-           li
+          //-             a(href='#') Brunch
+          //-             | ,
+          //-           li
+          //-             a(href='#') Caffee
+          //-             | ,
+          //-           li
+          //-             a(href='#') Dinning
+          //-             | ,
+          //-           li
+          //-             a(href='#') Fast Food
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-       li
+          //-         a.categories-action(href='#') Submit
+          //-         a.categories-link(href='#')
+          //-           i.fa.fa-map-marker
+          //-           |  Travel
+          //-         ul
+          //-           li
+          //-             a(href='#') Cruises
+          //-             | ,
+          //-           li
+          //-             a(href='#') Destinations
+          //-             | ,
+          //-           li
+          //-             a(href='#') Holidays
+          //-             | ,
+          //-           li
+          //-             a(href='#') Transportations
+          //-           li.all
+          //-             a(href='#')
+          //-               | View All 
+          //-               i.fa.fa-chevron-right
+          //-   // /.categories
+
+          .block.background-secondary.fullwidth.mt80.mb-80.pt60.pb60
+            .row
+              .col-sm-12
+                .contact-info-wrapper
+                  h2 Do You Have Any Questions?
+                  .contact-info
+                    span.contact-info-item
+                      i.fa.fa-at
+                      span support@sponsorgigs.com
+                    // /.contact-info-item
+                    span.contact-info-item
+                      i.fa.fa-phone
+                      span +123-456-789
+                    // /.contact-info-item
+                  // /.contact-info
+                // /.contact-info-wrapper
+              // /.col-*
+            // /.row
+        // /.container
+      // /.content
+    // /.main-inner

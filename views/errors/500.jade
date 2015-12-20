@@ -1,7 +1,14 @@
-extends ../errors
+extends ../layout
 
 block content
-  .page-wrapper
-    h1 503 Server Error
-    
-    p We are having trouble loading the page you are looking for.
+  .main
+    .main-inner
+      .container
+        .content
+          .caution
+            h1 500
+            h2 Internal Error
+          // /.page-header
+        // /.content
+      // /.container
+    // /.main-inner

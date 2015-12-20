@@ -1,0 +1,236 @@
+extends ../layout
+
+block content
+  .main
+    .main-inner
+      .container
+        .content
+          .page-title
+            h1 Submit Listing
+          .background-white.p30.mb30
+            h3 Please <a href="/contact">contact us</a> if you want your events listed on our site. Thanks you.
+
+          //- .background-white.p30.mb30
+          //-   h3.page-title Description
+          //-   .form-group
+          //-     input.form-control(type='text', placeholder='Title')
+          //-   // /.form-group
+          //-   .form-group
+          //-     textarea.form-control(placeholder='Listing Description', rows='8')
+          //-   // /.form-group
+          //- // /.box
+          //- .background-white.p30.mb30
+          //-   h3.page-title Attributes
+          //-   .row
+          //-     .col-sm-6
+          //-       .form-group
+          //-         select(name='property')
+          //-           option Property Type
+          //-           option Apartment
+          //-           option Condo
+          //-           option House
+          //-           option Villa
+          //-       // /.form-group
+          //-       .form-group
+          //-         select(name='contract')
+          //-           option Contract
+          //-           option Rent
+          //-           option Sale
+          //-       // /.form-group
+          //-       .form-group
+          //-         select(name='location')
+          //-           option Location
+          //-           option Kensal
+          //-           option Braymer
+          //-           option Horton Bay
+          //-           option Laurel Run
+          //-           option Estherville
+          //-           option Millhousen
+          //-           option Allegan
+          //-           option Florala
+          //-           option Dundarrach
+          //-           option Neligh
+          //-           option Roseboro
+          //-           option Mount Pleasant
+          //-           option Moro
+          //-           option Strathmoor Village
+          //-           option Mabton
+          //-           option Loup City
+          //-           option Wolverine
+          //-           option San Leandro
+          //-           option Dunwoody
+          //-           option Battle Ground
+          //-           option Hanson
+          //-           option Reedley
+          //-           option Bayshore
+          //-           option Tupelo
+          //-           option Lone Pine
+          //-       // /.form-group
+          //-       .input-group
+          //-         span.input-group-addon
+          //-           i.fa.fa-dollar
+          //-         input.form-control(type='text', placeholder='Price')
+          //-       // /.form-group
+          //-     // /.col-*
+          //-     .col-sm-6
+          //-       .input-group
+          //-         span.input-group-addon
+          //-           i.fa.fa-building-o
+          //-         input.form-control(type='text', placeholder='Address')
+          //-       // /.form-group
+          //-       .input-group
+          //-         span.input-group-addon
+          //-           i.fa.fa-map-o
+          //-         input.form-control(type='text', placeholder='City')
+          //-       // /.form-group
+          //-       .input-group
+          //-         span.input-group-addon
+          //-           i.fa.fa-phone
+          //-         input.form-control(type='text', placeholder='Phone')
+          //-       // /.form-group
+          //-       .input-group
+          //-         span.input-group-addon
+          //-           i.fa.fa-at
+          //-         input.form-control(type='text', placeholder='E-mail')
+          //-       // /.form-group
+          //-     // /.col-*
+          //-   // /.row
+          //- // /.box
+          //- .row
+          //-   .col-sm-12
+          //-     .background-white.p30.mb30
+          //-       h3.page-title
+          //-         | Map Position
+          //-         input#pac-input.controls.form-control.mb30(type='text', placeholder='Enter a location')
+          //-         #map-canvas
+          //-         .row
+          //-           .col-sm-6
+          //-             .input-group
+          //-               span.input-group-addon
+          //-                 i.fa.fa-map-marker
+          //-               input#input-latitude.form-control(type='text', placeholder='Latitude')
+          //-             // /.form-group
+          //-           // /.col-*
+          //-           .col-sm-6
+          //-             .input-group
+          //-               span.input-group-addon
+          //-                 i.fa.fa-map-marker
+          //-               input#input-longitude.form-control(type='text', placeholder='Lontgitude')
+          //-             // /.form-group
+          //-           // /.col-*
+          //-         // /.row
+          //-     // /.box
+          //-   .col-sm-12
+          //-     .background-white.p30.mb30
+          //-       h3.page-title
+          //-         | Gallery
+          //-         input#input-file(type='file')
+          //-     // /.box
+          //- // /.row
+          //- .background-white.p30.mb30
+          //-   h3.page-title Amenities
+          //-   ul.amenities
+          //-     li.checkbox
+          //-       input#amenity-1(type='checkbox')
+          //-       label(for='amenity-1') Air conditioning
+          //-     li.checkbox
+          //-       input#amenity-2(type='checkbox')
+          //-       label(for='amenity-2') Balcony
+          //-     li.checkbox
+          //-       input#amenity-3(type='checkbox')
+          //-       label(for='amenity-3') Bedding
+          //-     li.checkbox
+          //-       input#amenity-4(type='checkbox')
+          //-       label(for='amenity-4') Cable TV
+          //-     li.checkbox
+          //-       input#amenity-5(type='checkbox')
+          //-       label(for='amenity-5') Cleaning after exit
+          //-     li.checkbox
+          //-       input#amenity-6(type='checkbox')
+          //-       label(for='amenity-6') Cofee pot
+          //-     li.checkbox
+          //-       input#amenity-7(type='checkbox')
+          //-       label(for='amenity-7') Computer
+          //-     li.checkbox
+          //-       input#amenity-8(type='checkbox')
+          //-       label(for='amenity-8') Cot
+          //-     li.checkbox
+          //-       input#amenity-9(type='checkbox')
+          //-       label(for='amenity-9') Dishwasher
+          //-     li.checkbox
+          //-       input#amenity-10(type='checkbox')
+          //-       label(for='amenity-10') DVD
+          //-     li.checkbox
+          //-       input#amenity-11(type='checkbox')
+          //-       label(for='amenity-11') Fan
+          //-     li.checkbox
+          //-       input#amenity-12(type='checkbox')
+          //-       label(for='amenity-12') Fridge
+          //-     li.checkbox
+          //-       input#amenity-13(type='checkbox')
+          //-       label(for='amenity-13') Grill
+          //-     li.checkbox
+          //-       input#amenity-14(type='checkbox')
+          //-       label(for='amenity-14') Hairdryer
+          //-     li.checkbox
+          //-       input#amenity-15(type='checkbox')
+          //-       label(for='amenity-15') Heating
+          //-     li.checkbox
+          //-       input#amenity-16(type='checkbox')
+          //-       label(for='amenity-16') Hi-fi
+          //-     li.checkbox
+          //-       input#amenity-17(type='checkbox')
+          //-       label(for='amenity-17') Internet
+          //-     li.checkbox
+          //-       input#amenity-18(type='checkbox')
+          //-       label(for='amenity-18') Iron
+          //-     li.checkbox
+          //-       input#amenity-19(type='checkbox')
+          //-       label(for='amenity-19') Juicer
+          //-     li.checkbox
+          //-       input#amenity-20(type='checkbox')
+          //-       label(for='amenity-20') Lift
+          //-     li.checkbox
+          //-       input#amenity-21(type='checkbox')
+          //-       label(for='amenity-21') Microwave
+          //-     li.checkbox
+          //-       input#amenity-22(type='checkbox')
+          //-       label(for='amenity-22') Oven
+          //-     li.checkbox
+          //-       input#amenity-23(type='checkbox')
+          //-       label(for='amenity-23') Parking
+          //-     li.checkbox
+          //-       input#amenity-24(type='checkbox')
+          //-       label(for='amenity-24') Parquet
+          //-     li.checkbox
+          //-       input#amenity-25(type='checkbox')
+          //-       label(for='amenity-25') Pool
+          //-     li.checkbox
+          //-       input#amenity-26(type='checkbox')
+          //-       label(for='amenity-26') Radio
+          //-     li.checkbox
+          //-       input#amenity-27(type='checkbox')
+          //-       label(for='amenity-27') Roof terrace
+          //-     li.checkbox
+          //-       input#amenity-28(type='checkbox')
+          //-       label(for='amenity-28') Smoking allowed
+          //-     li.checkbox
+          //-       input#amenity-29(type='checkbox')
+          //-       label(for='amenity-29') Terrace
+          //-     li.checkbox
+          //-       input#amenity-30(type='checkbox')
+          //-       label(for='amenity-30') Toaster
+          //-     li.checkbox
+          //-       input#amenity-31(type='checkbox')
+          //-       label(for='amenity-31') Towelwes
+          //-     li.checkbox
+          //-       input#amenity-32(type='checkbox')
+          //-       label(for='amenity-32') Use of pool
+          //- .center
+          //-   button.btn.btn-primary.btn-xl(type='submit') Submit Listing
+
+          // /.center
+        // /.content
+      // /.container
+    // /.main-inner
+  // /.main

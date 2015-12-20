@@ -2,13 +2,30 @@ doctype html
 html(lang='en')
   head
     title= title ? title + " - Sponsor Events - SponsorGigs.com" : "Sponsor Events - SponsorGigs.com"
-
+    
     meta(name='description', content='Sponsor events.')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
-
-    //- link(href=CSS("master"), rel="stylesheet")
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1')
+    
+    link(href='http://fonts.googleapis.com/css?family=Nunito:300,400,700', rel='stylesheet', type='text/css')
+    link(href=THEMECSS('/libraries/font-awesome/css/font-awesome.min'), rel='stylesheet', type='text/css')
+    link(href=THEMECSS('/libraries/owl.carousel/assets/owl.carousel'), rel='stylesheet', type='text/css')
+    link(href=THEMECSS('/libraries/colorbox/example1/colorbox'), rel='stylesheet', type='text/css')
+    link(href=THEMECSS('/libraries/bootstrap-select/bootstrap-select.min'), rel='stylesheet', type='text/css')
+    link(href=THEMECSS('/libraries/bootstrap-fileinput/fileinput.min'), rel='stylesheet', type='text/css')
+    link(href=THEMECSS('/css/superlist'), rel='stylesheet', type='text/css')
+    
+    link(href=CSS("master"), rel="stylesheet")
 
   body
-    block content
+    .page-wrapper
+      include ./_header
+
+      block content
+
+      include ./_footer
+      
+      include ./_scripts
 
     include ./_analytics

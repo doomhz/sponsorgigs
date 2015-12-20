@@ -1,0 +1,43 @@
+header.header
+  .header-wrapper
+    .container
+      .header-inner
+        .header-logo
+          a(href='/')
+            img(src="#{CDN('/theme/img/logo.png', true)}")
+            span SponsorGigs
+        // /.header-logo
+        .header-content
+          .header-bottom
+            .header-action
+              a.header-action-inner(href='/events/add', title='Add Listing', data-toggle='tooltip', data-placement='bottom')
+                i.fa.fa-plus
+              // /.header-action-inner
+            // /.header-action
+            ul.header-nav-primary.nav.nav-pills.collapse.navbar-collapse
+              li.active
+                a(href='/')
+                  | Home 
+              li
+                a(href='/events')
+                  | Events 
+              li
+                a(href='/pricing')
+                  | Pricing 
+              li
+                a(href='/faq')
+                  | FAQ 
+              li
+                a(href='/contact')
+                  | Contact 
+            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.header-nav-primary')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+          // /.header-bottom
+        // /.header-content
+      // /.header-inner
+    // /.container
+  // /.header-wrapper
+// /.header
