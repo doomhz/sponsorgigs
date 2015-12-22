@@ -29,7 +29,8 @@ initAssets = (app)->
     assetsKey = "?_=#{cssDigestKey}" or ""
     simpleCdn(path, assetsHost + "/css/") + extension + assetsKey;
   app.locals.THEMECSS       = (path)->
-    extension = if environment is "production" and not /\.min$/.test(path) then ".min.css" else ".css"
+    # extension = if environment is "production" and not /\.min$/.test(path) then ".min.css" else ".css"
+    extension = ".css"
     assetsKey = "?_=#{cssDigestKey}" or ""
     simpleCdn(path, assetsHost + "/theme/") + extension + assetsKey;
   app.locals.JS             = (path)->
@@ -37,7 +38,8 @@ initAssets = (app)->
     assetsKey = "?_=#{jsDigestKey}" or ""
     simpleCdn(path, assetsHost + "/js/") + extension + assetsKey;
   app.locals.THEMEJS        = (path)->
-    extension = if environment is "production" and not /\.min$/.test(path) then ".min.js" else ".js"
+    # extension = if environment is "production" and not /\.min$/.test(path) then ".min.js" else ".js"
+    extension = ".js"
     assetsKey = "?_=#{jsDigestKey}" or ""
     simpleCdn(path, assetsHost + "/theme/") + extension + assetsKey;
   app
