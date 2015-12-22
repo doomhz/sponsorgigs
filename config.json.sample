@@ -48,6 +48,16 @@
       "host": "localhost",
       "logging": true
     },
+    "session": {
+      "cookie_secret": "secretkey",
+      "session_key": "spgs",
+      "cookie": {
+        "maxAge": 2592000000,
+        "path": "/",
+        "httpOnly": true,
+        "secure": false
+      }
+    },
     "emailer": {
       "enabled": true,
       "host": "http://localhost:5000",
