@@ -43,7 +43,7 @@ app.use(session({
   saveUninitialized: true,
   resave:            true
 }));
-app.use(express.static(__dirname + '/public'), {maxAge: 2592000000}); // 30 days
+app.use(express.static(__dirname + '/public')); // {maxAge: 2592000000} 30 days
 app.use(function(err, req, res, next) {
   if (err.status === 400) {
     res.statusCode = 404;
