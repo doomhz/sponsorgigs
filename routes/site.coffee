@@ -1,19 +1,24 @@
 module.exports = (app)->
 
   app.get "/", (req, res)->
-    res.render "site/index"
+    res.render "site/index",
+      currentPage: "home"
 
   app.get "/contact", (req, res)->
-    res.render "site/contact"
+    res.render "site/contact",
+      currentPage: "contact"
 
   app.get "/faq", (req, res)->
-    res.render "site/faq"
+    res.render "site/faq",
+      currentPage: "faq"
 
   app.get "/terms", (req, res)->
-    res.render "site/terms"
+    res.render "site/terms",
+      currentPage: "terms"
 
   app.get "/pricing", (req, res)->
-    res.render "site/pricing"
+    res.render "site/pricing",
+      currentPage: "pricing"
 
   app.get "/ping", (req, res)->
     res.type("txt").send("ok")

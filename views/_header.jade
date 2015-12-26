@@ -15,19 +15,19 @@ header.header
               // /.header-action-inner
             // /.header-action
             ul.header-nav-primary.nav.nav-pills.collapse.navbar-collapse
-              li.active
+              li(class="#{currentPage === 'home' ? 'active' : ''}")
                 a(href='/')
                   | Home 
-              li
+              li(class="#{currentPage === 'events' ? 'active' : ''}")
                 a(href='/events')
                   | Events 
-              li
+              li(class="#{currentPage === 'pricing' ? 'active' : ''}")
                 a(href='/pricing')
                   | Pricing 
-              li
+              li(class="#{currentPage === 'faq' ? 'active' : ''}")
                 a(href='/faq')
                   | FAQ 
-              li
+              li(class="#{currentPage === 'contact' ? 'active' : ''}")
                 a(href='/contact')
                   | Contact 
             button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.header-nav-primary')
