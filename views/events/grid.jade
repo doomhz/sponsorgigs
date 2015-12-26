@@ -5,7 +5,7 @@ block content
     .main-inner
       .container
         .content
-          .document-title
+          #events-title-header.document-title
             h1 Events
             ul.breadcrumb
               li
@@ -14,7 +14,7 @@ block content
                 a(href='/events/grid') Events
           // /.document-title
           
-          form.filter(method='post', action='?')
+          form.filter(method='get', action='/events')
             .row
               .col-sm-12.col-md-4
                 .form-group
@@ -24,20 +24,13 @@ block content
               .col-sm-12.col-md-4
                 .form-group
                   select.form-control(title='Select Location')
-                    option Bronx
-                    option Brooklyn
-                    option Manhattan
-                    option Staten Island
-                    option Queens
+                    option Antwerp
                 // /.form-group
               // /.col-*
               .col-sm-12.col-md-4
                 .form-group
                   select.form-control(title='Select Category')
-                    option(value='') Automotive
-                    option(value='') Jobs
-                    option(value='') Nightlife
-                    option(value='') Services
+                    option(value='') Sports
                 // /.form-group
               // /.col-*
             // /.row
@@ -45,12 +38,12 @@ block content
             .row
               .col-sm-8
                 .filter-actions
-                  a(href='#')
-                    i.fa.fa-close
-                    |  Reset Filter
-                  a(href='#')
-                    i.fa.fa-save
-                    |  Save Search
+                  //- a(href='#')
+                  //-   i.fa.fa-close
+                  //-   |  Reset Filter
+                  //- a(href='#')
+                  //-   i.fa.fa-save
+                  //-   |  Save Search
                 // /.filter-actions
               // /.col-*
               .col-sm-4
@@ -59,318 +52,52 @@ block content
             // /.row
 
           h2.page-title
-            | 1802 results matching your query
-            form.filter-sort(method='get', action='?')
-              .form-group
-                select(title='Sort by')
-                  option(name='price') Price
-                  option(name='rating') Rating
-                  option(name='title') Title
-              // /.form-group
-              .form-group
-                select(title='Order')
-                  option(name='ASC') Asc
-                  option(name='DESC') Desc
+            //- | 1802 results matching your query
+            //- form.filter-sort(method='get', action='?')
+            //-   .form-group
+            //-     select(title='Sort by')
+            //-       option(name='price') Price
+            //-       option(name='rating') Rating
+            //-       option(name='title') Title
+            //-   // /.form-group
+            //-   .form-group
+            //-     select(title='Order')
+            //-       option(name='ASC') Asc
+            //-       option(name='DESC') Desc
             // /.form-group
           // /.page-title
           .cards-simple-wrapper
             .row
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-1.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-1.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Trip To Paris, France
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Vacation
-                    .card-simple-price $100 / night
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-2.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-2.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Tasty Brazil Coffee
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Coffee
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-3.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-3.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Healthy Breakfast
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Food
-                    .card-simple-price $12 / person
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-4.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-4.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Coffee & Newspaper
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Restaurant
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-5.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-5.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Boat Trip
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Vacation
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-6.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-6.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Italian Restaurant
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Restaurant
-                    .card-simple-price $28 / person
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-7.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-7.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Best Brazil Coffee
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Pub
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-8.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-8.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Retro Shop
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Shop
-                    .card-simple-price $3 / cup
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-9.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-9.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Wine Tasting
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Event
-                    .card-simple-price $13 / ticket
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-10.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-10.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Affordable Office
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Coworking
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-11.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-11.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Quick Breakfast
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Food
-                    .card-simple-price $8 / person
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-4.col-lg-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-12.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-12.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/super-marathon') Monumental City
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-star-o(href='#')
-                        a.fa.fa-search(href='/events/1/super-marathon')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Landmark
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
+              - var events = [1,2,3,4,5,6,7,8];
+              - each ev in events 
+                .col-sm-6.col-md-4.col-lg-3
+                  .card-simple(data-background-image="#{CDN('/img/events/1/header_banner.jpg', true)}", style='background-image: url(#{CDN("/img/events/1/header_banner.jpg", true)}')
+                    .card-simple-background
+                      .card-simple-content
+                        h2
+                          a(href='/events/1/super-marathon') Antwerp Marathon
+                        .card-simple-actions
+                          a.fa.fa-search(href='/events/1/super-marathon')
+                        // /.card-simple-actions
+                      // /.card-simple-content
+                      .card-simple-label Sports
+                    // /.card-simple-background
+                  // /.card-simple
+                // /.col-*
             // /.row
           // /.cards-simple-wrapper
-          .pager
-            ul
-              li
-                a(href='#') Prev
-              li
-                a(href='#') 5
-              li.active
-                a 6
-              li
-                a(href='#') 7
-              li
-                a(href='#') Next
+          //- .pager
+          //-   ul
+          //-     li
+          //-       a(href='#') Prev
+          //-     li
+          //-       a(href='#') 5
+          //-     li.active
+          //-       a 6
+          //-     li
+          //-       a(href='#') 7
+          //-     li
+          //-       a(href='#') Next
           // /.pagination
         // /.content
       // /.container

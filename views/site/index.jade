@@ -6,7 +6,7 @@ block content
       .content
         .mt-80
           .hero-image
-            .hero-image-inner(style="background-image: url(#{CDN('/theme/img/tmp/slider-large-3.jpg')};")
+            .hero-image-inner(style="background-image: url(#{CDN('/img/home_header_1.jpg')};")
               .hero-image-content
                 .container
                   h1 Sponsor events
@@ -27,21 +27,14 @@ block content
                         // /.form-group
                         .hero-image-location.form-group
                           select.form-control(title='Location')
-                            option Bronx
-                            option Brooklyn
-                            option Manhattan
-                            option Staten Island
-                            option Queens
+                            option Antwerp
                         // /.form-group
                         .hero-image-category.form-group
                           select.form-control(title='Category')
-                            option(value='') Automotive
-                            option(value='') Jobs
-                            option(value='') Nightlife
-                            option(value='') Services
+                            option(value='sports') Sports
                         // /.form-group
-                        .hero-image-price.form-group
-                          input.form-control(type='text', placeholder='Min. Price')
+                        //- .hero-image-price.form-group
+                        //-   input.form-control(type='text', placeholder='Min. Price')
                         // /.form-group
                         button.btn.btn-primary.btn-block(type='submit') Search
                     // /.col-*
@@ -75,194 +68,22 @@ block content
           // /.page-header
           .cards-simple-wrapper
             .row
-              .col-sm-6.col-md-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-2.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-2.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/1/tasty-coffee') Tasty Brazil Coffee
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-bookmark-o(href='#')
-                        a.fa.fa-search(href='/events/1/tasty-coffee')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Coffee
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-3.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-3.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/2/healthy-breakfast') Healthy Breakfast
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-bookmark-o(href='#')
-                        a.fa.fa-search(href='/events/2/healthy-breakfast')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Food
-                    .card-simple-price $12 / person
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-4.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-4.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/3/coffee-newspaper') Coffee & Newspaper
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-bookmark-o(href='#')
-                        a.fa.fa-search(href='/events/3/coffee-newspaper')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Restaurant
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-5.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-5.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/4/boat-trip') Boat Trip
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-bookmark-o(href='#')
-                        a.fa.fa-search(href='/events/4/boat-trip')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Vacation
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-6.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-6.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/5/italian-restaurant') Italian Restaurant
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-bookmark-o(href='#')
-                        a.fa.fa-search(href='/events/5/italian-restaurant')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Restaurant
-                    .card-simple-price $28 / person
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-7.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-7.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/6/best-coffee') Best Brazil Coffee
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-bookmark-o(href='#')
-                        a.fa.fa-search(href='/events/6/best-coffee')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Pub
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-8.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-8.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/7/retro-shop') Retro Shop
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-bookmark-o(href='#')
-                        a.fa.fa-search(href='/events/7/retro-shop')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Shop
-                    .card-simple-price $3 / cup
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
-              .col-sm-6.col-md-3
-                .card-simple(data-background-image="#{CDN('/theme/img/tmp/product-9.jpg', true)}", style='background-image: url(#{CDN("/theme/img/tmp/product-9.jpg", true)}')
-                  .card-simple-background
-                    .card-simple-content
-                      h2
-                        a(href='/events/8/wine-tasting') Wine Tasting
-                      .card-simple-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.card-rating
-                      .card-simple-actions
-                        a.fa.fa-bookmark-o(href='#')
-                        a.fa.fa-search(href='/events/8/wine-tasting')
-                        a.fa.fa-heart-o(href='#')
-                      // /.card-simple-actions
-                    // /.card-simple-content
-                    .card-simple-label Event
-                    .card-simple-price $13 / ticket
-                  // /.card-simple-background
-                // /.card-simple
-              // /.col-*
+              - var events = [1,2,3,4,5,6,7,8];
+              - each ev in events 
+                .col-sm-6.col-md-4.col-lg-3
+                  .card-simple(data-background-image="#{CDN('/img/events/1/header_banner.jpg', true)}", style='background-image: url(#{CDN("/img/events/1/header_banner.jpg", true)}')
+                    .card-simple-background
+                      .card-simple-content
+                        h2
+                          a(href='/events/1/super-marathon') Antwerp Marathon
+                        .card-simple-actions
+                          a.fa.fa-search(href='/events/1/super-marathon')
+                        // /.card-simple-actions
+                      // /.card-simple-content
+                      .card-simple-label Sports
+                    // /.card-simple-background
+                  // /.card-simple
+                // /.col-*
             // /.row
           // /.cards-simple-wrapper
           

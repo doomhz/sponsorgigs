@@ -6794,6 +6794,12 @@ blockquote {
     z-index: 2; }
     .document-title .breadcrumb a {
       color: rgba(255, 255, 255, 0.9); }
+#contact-title-header {
+  background-image: url("/img/contact_header_2.jpg");
+}
+#events-title-header {
+  background-image: url("/img/events_header_2.jpg");
+}
 
 .tooltip > .tooltip-inner {
   word-wrap: none;

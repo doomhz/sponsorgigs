@@ -5,71 +5,63 @@ block content
     .main-inner
       .content
         .mt-80.mb80
-          .detail-banner(style='background-image: url(#{CDN("/theme/img/tmp/detail-banner-1.jpg", true)});')
+          .detail-banner(style='background-image: url(#{CDN("/img/events/1/header_banner.jpg", true)});')
             .container
               .detail-banner-left
                 .detail-banner-info
-                  .detail-label Restaurant
-                  .detail-verified Verified
+                  .detail-label Sport
+                  .detail-verified Running
+                  .detail-verified Marathon
+                  .detail-verified Outdoor
                 // /.detail-banner-info
                 h2.detail-title
-                  | Brazilian Coffe Taste
+                  | Antwerp Marathon
                 .detail-banner-address
                   i.fa.fa-map-o
-                  |  347/26 22nd Avenue, New York City, USA
+                  |  Londenstraat 1, Antwerp, Belgium
                 // /.detail-banner-address
-                .detail-banner-rating
-                  i.fa.fa-star
-                  i.fa.fa-star
-                  i.fa.fa-star
-                  i.fa.fa-star
-                  i.fa.fa-star-half-o
-                // /.detail-banner-rating
-                .detail-banner-btn.bookmark
-                  i.fa.fa-bookmark-o
-                  span(data-toggle='Bookmarked') Bookmark
-                // /.detail-claim
-                .detail-banner-btn.heart
-                  i.fa.fa-heart-o
-                  span(data-toggle='I Love It') Give Heart
+                a(href="#sponsor-form-cnt").detail-banner-btn
+                  i.fa.fa-usd
+                    |  Invest Now
                 // /.detail-claim
               // /.detail-banner-left
             // /.container
           // /.detail-banner
+
         .container
           .row.detail-content
             .col-sm-7
               .detail-gallery
                 .detail-gallery-preview
-                  a.cboxElement(href='#{CDN("/theme/img/tmp/gallery-1.jpg", true)}')
-                    img(src='#{CDN("/theme/img/tmp/gallery-1.jpg", true)}')
+                  a.cboxElement(href='#{CDN("/img/events/1/gallery/1.jpg", true)}')
+                    img(src='#{CDN("/img/events/1/gallery/1.jpg", true)}')
                 ul.detail-gallery-index
                   li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/theme/img/tmp/gallery-1.jpg", true)}')
-                      img(src='#{CDN("/theme/img/tmp/gallery-1.jpg", true)}', alt='...')
+                    a(data-target='#{CDN("/img/events/1/gallery/1.jpg", true)}')
+                      img(src='#{CDN("/img/events/1/gallery/1.jpg", true)}', alt='...')
                   li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/theme/img/tmp/gallery-2.jpg", true)}')
-                      img(src='#{CDN("/theme/img/tmp/gallery-2.jpg", true)}', alt='...')
+                    a(data-target='#{CDN("/img/events/1/gallery/2.jpg", true)}')
+                      img(src='#{CDN("/img/events/1/gallery/2.jpg", true)}', alt='...')
                   li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/theme/img/tmp/gallery-3.jpg", true)}')
-                      img(src='#{CDN("/theme/img/tmp/gallery-3.jpg", true)}', alt='...')
+                    a(data-target='#{CDN("/img/events/1/gallery/3.jpg", true)}')
+                      img(src='#{CDN("/img/events/1/gallery/3.jpg", true)}', alt='...')
                   li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/theme/img/tmp/gallery-4.jpg", true)}')
-                      img(src='#{CDN("/theme/img/tmp/gallery-4.jpg", true)}', alt='...')
+                    a(data-target='#{CDN("/img/events/1/gallery/4.jpg", true)}')
+                      img(src='#{CDN("/img/events/1/gallery/4.jpg", true)}', alt='...')
                   li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/theme/img/tmp/gallery-5.jpg", true)}')
-                      img(src='#{CDN("/theme/img/tmp/gallery-5.jpg", true)}', alt='...')
+                    a(data-target='#{CDN("/img/events/1/gallery/5.jpg", true)}')
+                      img(src='#{CDN("/img/events/1/gallery/5.jpg", true)}', alt='...')
                   li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/theme/img/tmp/gallery-6.jpg", true)}')
-                      img(src='#{CDN("/theme/img/tmp/gallery-6.jpg", true)}', alt='...')
-                  li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/theme/img/tmp/gallery-7.jpg", true)}')
-                      img(src='#{CDN("/theme/img/tmp/gallery-7.jpg", true)}', alt='...')
-                  li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/theme/img/tmp/gallery-8.jpg", true)}')
-                      img(src='#{CDN("/theme/img/tmp/gallery-8.jpg", true)}', alt='...')
+                    a(data-target='#{CDN("/img/events/1/gallery/6.jpg", true)}')
+                      img(src='#{CDN("/img/events/1/gallery/6.jpg", true)}', alt='...')
               // /.detail-gallery
-              h2 We Are Here
+              
+              h2 Video
+              .detail-video
+                iframe(width="640", height="360", src="https://www.youtube.com/embed/iaI5e8F4CWA", frameborder="0", allowfullscreen=true)
+              // /.detail-video
+
+              h2 Happening here
               .background-white.p20
                 // Nav tabs
                 ul#listing-detail-location.nav.nav-tabs(role='tablist')
@@ -86,229 +78,24 @@ block content
                   #simple-map-panel.tab-pane.fade.in.active(role='tabpanel')
                     .detail-map
                       .map-position
-                        #listing-detail-map(data-transparent-marker-image='#{CDN("/theme/img/transparent-marker-image.png", true)}', data-styles='[{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.government","elementType":"labels.text.fill","stylers":[{"color":"#b43b3b"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"lightness":"8"},{"color":"#bcbec0"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#5b5b5b"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7cb3c9"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#abb9c0"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"color":"#fff1f1"},{"visibility":"off"}]}]', data-zoom='15', data-latitude='40.779995', data-longitude='-73.969133', data-icon='fa fa-coffee')
+                        #listing-detail-map(data-transparent-marker-image='#{CDN("/theme/img/transparent-marker-image.png", true)}', data-styles='[{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.government","elementType":"labels.text.fill","stylers":[{"color":"#b43b3b"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"lightness":"8"},{"color":"#bcbec0"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#5b5b5b"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7cb3c9"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#abb9c0"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"color":"#fff1f1"},{"visibility":"off"}]}]', data-zoom='15', data-latitude='51.2310564', data-longitude='4.4075833', data-icon='fa fa-calendar-check-o')
                         // /#map-property
                       // /.map-property
                     // /.detail-map
                   #street-view-panel.tab-pane.fade(role='tabpanel')
                     #listing-detail-street-view(data-latitude='40.758896', data-longitude='-73.985135', data-heading='225', data-pitch='0', data-zoom='1')
-              h2 Video
-              .detail-video
-                iframe(src='https://player.vimeo.com/video/36911719?color=009f8b&byline=0&portrait=0', width='653', height='366', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
-              // /.detail-video
-              h2#reviews All Reviews
-              .reviews
-                .review
-                  .review-image
-                    img(src='#{CDN("/theme/img/tmp/agent-1.jpg", true)}', alt='')
-                  // /.review-image
-                  .review-inner
-                    .review-title
-                      h2 Nancy Collins
-                      span.report
-                        span.separator •
-                        i.fa.fa-flag(title='', data-toggle='tooltip', data-placement='top', data-original-title='Report')
-                      .review-overall-rating
-                        span.overall-rating-title Total Score:
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star-half-o
-                        i.fa.fa-star-o
-                      // /.review-rating
-                    // /.review-title
-                    .review-content-wrapper
-                      .review-content
-                        .review-pros
-                          p
-                            | Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. In congue mattis felis, non hendrerit orci dictum id.
-                        // /.pros
-                        .review-cons
-                          p
-                            | Duis et magna vel est tempus vehicula vitae sit amet enim. Sed vitae ligula congue.
-                        // /.cons
-                      // /.review-content
-                      .review-rating
-                        dl
-                          dt Food
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                          dt Staff
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star-o
-                          dt Value
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star-o
-                            i.fa.fa-star-o
-                          dt Atmosphere
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star-o
-                            i.fa.fa-star-o
-                      // /.review-rating
-                    // /.review-content-wrapper
-                  // /.review-inner
-                // /.review
-                .review
-                  .review-image
-                    img(src="#{CDN('/theme/img/tmp/agent-2.jpg', true)}", alt='')
-                  // /.review-image
-                  .review-inner
-                    .review-title
-                      h2 Kim Glove
-                      span.report
-                        span.separator •
-                        i.fa.fa-flag(title='', data-toggle='tooltip', data-placement='top', data-original-title='Report')
-                      .review-overall-rating
-                        span.overall-rating-title Total Score:
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star-half-o
-                        i.fa.fa-star-o
-                        i.fa.fa-star-o
-                      // /.review-rating
-                    // /.review-title
-                    .review-content-wrapper
-                      .review-content
-                        .review-pros
-                          p Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus.
-                        // /.pros
-                        .review-cons
-                          p
-                            | Suspendisse ac cursus elit. In congue mattis felis, non hendrerit orci dictum id. Duis et magna vel est tempus vehicula vitae sit amet enim. Sed vitae ligula congue.
-                        // /.cons
-                      // /.review-content
-                      .review-rating
-                        dl
-                          dt Food
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star-o
-                          dt Staff
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star-o
-                            i.fa.fa-star-o
-                            i.fa.fa-star-o
-                          dt Value
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star-o
-                            i.fa.fa-star-o
-                          dt Atmosphere
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star-o
-                            i.fa.fa-star-o
-                            i.fa.fa-star-o
-                      // /.review-rating
-                    // /.review-content-wrapper
-                  // /.review-inner
-                // /.review
-                .review
-                  .review-image
-                    img(src='#{CDN("/theme/img/tmp/agent-5.jpg", true)}', alt='')
-                  // /.review-image
-                  .review-inner
-                    .review-title
-                      h2 Richard Peterson
-                      span.report
-                        span.separator •
-                        i.fa.fa-flag(title='', data-toggle='tooltip', data-placement='top', data-original-title='Report')
-                      .review-overall-rating
-                        span.overall-rating-title Total Score:
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.review-rating
-                    // /.review-title
-                    .review-content-wrapper
-                      .review-content
-                        .review-pros
-                          p
-                            | Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. In congue mattis felis, non hendrerit orci dictum id.
-                        // /.pros
-                        .review-cons
-                          p
-                            | Duis et magna vel est tempus vehicula vitae sit amet enim. Sed vitae ligula congue.
-                        // /.cons
-                      // /.review-content
-                      .review-rating
-                        dl
-                          dt Food
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                          dt Staff
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star-o
-                          dt Value
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                          dt Atmosphere
-                          dd
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                            i.fa.fa-star
-                      // /.review-rating
-                    // /.review-content-wrapper
-                  // /.review-inner
-                // /.review
-              // /.reviews
+
             // /.col-sm-7
             .col-sm-5
               .background-white.p20
-                .detail-overview-hearts
-                  i.fa.fa-heart
-                  strong 213 
-                  | people love it
-                .detail-overview-rating
-                  i.fa.fa-star
-                  strong 4.3 / 5 
-                  | from 
-                  a(href='#reviews') 316 reviews
                 .detail-actions.row
-                  .col-sm-4
-                    .btn.btn-primary.btn-book
-                      i.fa.fa-shopping-cart
-                      |  Book Now
-                  // /.col-sm-4
-                  .col-sm-4
+
+                  .col-sm-6
+                    a(href="#sponsor-form-cnt").btn.btn-primary.btn-book
+                      i.fa.fa-usd
+                      |  Invest Now
+                  // /.col-sm-6
+                  .col-sm-6
                     .btn.btn-secondary.btn-share
                       i.fa.fa-share-square-o
                       |  Share
@@ -329,45 +116,52 @@ block content
                           li
                             i.fa.fa-chain
                             |  Link
-                  // /.col-sm-4
-                  .col-sm-4
-                    .btn.btn-secondary.btn-claim
-                      i.fa.fa-hand-peace-o
-                      |  Claim
-                  // /.col-sm-4
+                  // /.col-sm-6
                 // /.detail-actions
               h2
                 | About 
-                span.text-secondary Brazilian Coffe Taste
+                span.text-secondary Antwerp Marathon
               .background-white.p20
-                .detail-vcard
-                  .detail-logo
-                    img(src='#{CDN("/theme/img/tmp/pragmaticmates-logo.png", true)}')
-                  // /.detail-logo
-                  .detail-contact
-                    .detail-contact-email
-                      i.fa.fa-envelope-o
-                      a(href='mailto:#') company@example.com
-                    .detail-contact-phone
-                      i.fa.fa-mobile-phone
-                      a(href='tel:#') +01-23-456-789
-                    .detail-contact-website
-                      i.fa.fa-globe
-                      a(href='#') www.superlist.com
-                    .detail-contact-address
-                      i.fa.fa-map-o
-                      |                         347/26 22nd Avenue
-                      br
-                      |                         NYC AZ 85705, USA
-                  // /.detail-contact
-                // /.detail-vcard
                 .detail-description
                   p
-                    | Vestibulum a lectus ullamcorper, dapibus ante id, sagittis libero. In tincidunt nisi venenatis, ornare eros at, hendrerit sem. Nunc metus purus, porta a dignissim vel, vulputate sed odio. Aenean est nisi, pulvinar eget velit quis, placerat hendrerit arcu. Vestibulum non dictum nibh.
+                    strong DVV Antwerp Marathon
+                  ul
+                    li Start: 9:00 a.m. on Linkeroever (Thonetlaan nr. 110)
+                    li Finish: Grote Markt, Rechteroever
+                    li Course: 42,195 km (IAAF measured)
+                    li Time limit: 5 hours 30 minutes
                   p
-                    | In congue mattis felis, non hendrerit orci dictum id. Etiam consequat nulla vitae tempus interdum.Nam gravida convallis lacus, at dignissim urna pulvinar sed.
+                    strong Chiquita Kids Run 1.4 km
+                  ul
+                    li Start: 11:00 a.m. on Linkeroever (Thonetlaan)
+                    li Finish: on Linkeroever (Charles De Costerlaan)
+                    li Fun Run (no time registration!) for kids between 4 and 12 years of age
                   p
-                    | Cras ac mi odio. Aliquam erat volutpat. Cras euismod facilisis ligula in tristique. Proin et eleifend lacus, vitae dictum orci
+                    strong DVV Antwerp Short Run 5 km
+                  ul
+                    li Start: 12:00 noon on Linkeroever (Thonetlaan)
+                    li Finish: on Linkeroever (Charles De Costerlaan)
+                  p
+                    strong NEW BALANCE Ladies Run 5 km
+                  ul
+                    li Start: 1:00 p.m. on Linkeroever (Thonetlaan)
+                    li Finish: on Linkeroever (Charles De Costerlaan)
+                    li Ladies only race
+                    li
+                  p
+                    strong DVV Antwerp 10 Miles
+                  ul
+                    li
+                      | Start: on Linkeroever (Thonetlaan)
+                      br
+                      |   Wave 1: 3:00 p.m.
+                      br
+                      |   Wave 2: 3:30 p.m.
+                      br
+                      |   Wave 3: 4:00 p.m.
+                    li Finish: on Linkeroever (Charles De Costerlaan)
+                    li Course: 10 English miles or 16 km
+                    li Time Limit: 2 hours 15 minutes
                 .detail-follow
                   h5 Follow Us:
                   .follow-wrapper
@@ -383,225 +177,74 @@ block content
                       i.fa.fa-google-plus
                   // /.follow-wrapper
                 // /.detail-follow
-              .widget
-                h2.widgettitle Working Hours
-                .p20.background-white
-                  .working-hours
-                    .day.clearfix
-                      span.name Mon
-                      span.hours 07:00 AM - 07:00 PM
-                    // /.day
-                    .day.clearfix
-                      span.name Tue
-                      span.hours 07:00 AM - 07:00 PM
-                    // /.day
-                    .day.clearfix
-                      span.name Wed
-                      span.hours 07:00 AM - 07:00 PM
-                    // /.day
-                    .day.clearfix
-                      span.name Thu
-                      span.hours 07:00 AM - 07:00 PM
-                    // /.day
-                    .day.clearfix
-                      span.name Fri
-                      span.hours 07:00 AM - 07:00 PM
-                    // /.day
-                    .day.clearfix
-                      span.name Sat
-                      span.hours 07:00 AM - 02:00 PM
-                    // /.day
-                    .day.clearfix
-                      span.name Sun
-                      span.hours Closed
-                    // /.day
-              // /.widget
-              h2 Amenities
+              
+              h2 Contacts & Organizers
+              .background-white.p20
+                .detail-vcard
+                  .detail-logo
+                    img(src='#{CDN("/img/events/1/logo.jpg", true)}')
+                  // /.detail-logo
+                  .detail-contact
+                    .detail-contact-name
+                      i.fa.fa-user
+                      | Jan Peeters
+                    .detail-contact-email
+                      i.fa.fa-envelope-o
+                      a(href='mailto:contact+am@sponsorgigs.com') contact+am@sponsorgigs.com
+                    .detail-contact-phone
+                      i.fa.fa-mobile-phone
+                      a(href='tel:033 - 330 29 88') 033 - 330 29 88
+                    .detail-contact-website
+                      i.fa.fa-globe
+                      a(href='http://www.sport.be/antwerp10miles/2016/en/') www.sport.be/antwerp10miles
+                    .detail-contact-address
+                      i.fa.fa-map-o
+                      |                         Londenstraat 1, Antwerp
+                      br
+                      |                         Belgium
+                  // /.detail-contact
+                // /.detail-vcard
+
+              h2 Tags
               .background-white.p20
                 ul.detail-amenities
-                  li.yes WiFi
-                  li.yes Parking
-                  li.no Vine
-                  li.yes Terrace
-                  li.no Bar
-                  li.yes Take Away Coffee
-                  li.no Catering
-                  li.yes Raw Food
-                  li.no Delivery
-                  li.yes No-smoking room
-                  li.no Reservations
+                  li.yes Sports
+                  li.yes Outdoor
+                  li.yes Marathon
+                  li.yes Running
               // /.detail-amenities
-              h2 Enquire Form
+
+            .col-sm-12
+              h2#sponsor-form-cnt Sponsor details
+              p.background-white.p20 Please complete the form bellow and we'll contact you with further details about how to become a sponsor. Thank you.
               .detail-enquire-form.background-white.p20
                 form(method='post', action='?')
                   .form-group
-                    label(for='') Name
-                    input.form-control(type='text', name='', id='')
+                    label(for='')
+                      | Name
+                      span.required *
+                    input.form-control(type='text', name='name', id='name', required='')
                   // /.form-group
                   .form-group
                     label(for='')
                       | Email 
                       span.required *
-                    input.form-control(type='email', name='', id='', required='')
-                  // /.form-group
+                    input.form-control(type='email', name='email', id='email', required='')
                   .form-group
                     label(for='')
-                      | Message 
+                      | Phone 
                       span.required *
-                    textarea.form-control(name='', id='', rows='5', required='')
-                    .textarea-resize
+                    input.form-control(type='text', name='phone', id='phone', required='')
                   // /.form-group
                   p
                     | Required fields are marked 
                     span.required *
                   button.btn.btn-primary.btn-block(type='submit')
-                    i.fa.fa-paper-plane
-                    | Send Message
+                    i.fa.fa-usd
+                    | Become a sponsor
               // /.detail-enquire-form
-              h2 3 Reasons Why Choose Us
-              .background-white.p20.reasons
-                .reason
-                  .reason-icon
-                    i.fa.fa-trophy
-                  // /.reason-icon
-                  .reason-content
-                    h4 Coffee House of the Year 2015
-                    p
-                      | Fusce at venenatis lorem. Quisque volutpat aliquam leo, a pellentesque orci varius sit amet.
-                  // /.reason-content
-                // /.reason
-                .reason
-                  .reason-icon
-                    i.fa.fa-coffee
-                  // /.reason-icon
-                  .reason-content
-                    h4 High Quality Coffee Beans
-                    p
-                      | Fusce at venenatis lorem. Quisque volutpat aliquam leo, a pellentesque orci varius sit amet.
-                  // /.reason-content
-                // /.reason
-                .reason
-                  .reason-icon
-                    i.fa.fa-cutlery
-                  // /.reason-icon
-                  .reason-content
-                    h4 Snacks & Deserts
-                    p
-                      | Fusce at venenatis lorem. Quisque volutpat aliquam leo, a pellentesque orci varius sit amet.
-                  // /.reason-content
-                // /.reason
-              .detail-payments
-                h3 Accepted Payments
-                ul
-                  li
-                    a(href='#')
-                      i.fa.fa-paypal
-                  li
-                    a(href='#')
-                      i.fa.fa-cc-amex
-                  li
-                    a(href='#')
-                      i.fa.fa-cc-mastercard
-                  li
-                    a(href='#')
-                      i.fa.fa-cc-stripe
-                  li
-                    a(href='#')
-                      i.fa.fa-cc-visa
-            // /.col-sm-5
-            .col-sm-12
-              h2 Submit a Review
-              form.background-white.p20.add-review(method='post', action='?')
-                .row
-                  .form-group.col-sm-6
-                    label(for='')
-                      | Name 
-                      span.required *
-                    input.form-control(type='text', id='', required='')
-                  // /.col-sm-6
-                  .form-group.col-sm-6
-                    label(for='')
-                      | Email 
-                      span.required *
-                    input.form-control(type='email', id='', required='')
-                  // /.col-sm-6
-                // /.row
-                .row
-                  .form-group.input-rating.col-sm-3
-                    .rating-title Food
-                    input#rating-food-1(type='radio', value='1', name='food')
-                    label(for='rating-food-1')
-                    input#rating-food-2(type='radio', value='2', name='food')
-                    label(for='rating-food-2')
-                    input#rating-food-3(type='radio', value='3', name='food')
-                    label(for='rating-food-3')
-                    input#rating-food-4(type='radio', value='4', name='food')
-                    label(for='rating-food-4')
-                    input#rating-food-5(type='radio', value='5', name='food')
-                    label(for='rating-food-5')
-                  // /.col-sm-3
-                  .form-group.input-rating.col-sm-3
-                    .rating-title Staff
-                    input#rating-staff-1(type='radio', value='1', name='staff')
-                    label(for='rating-staff-1')
-                    input#rating-staff-2(type='radio', value='2', name='staff')
-                    label(for='rating-staff-2')
-                    input#rating-staff-3(type='radio', value='3', name='staff')
-                    label(for='rating-staff-3')
-                    input#rating-staff-4(type='radio', value='4', name='staff')
-                    label(for='rating-staff-4')
-                    input#rating-staff-5(type='radio', value='5', name='staff')
-                    label(for='rating-staff-5')
-                  // /.col-sm-3
-                  .form-group.input-rating.col-sm-3
-                    .rating-title Value
-                    input#rating-value-1(type='radio', value='1', name='value')
-                    label(for='rating-value-1')
-                    input#rating-value-2(type='radio', value='2', name='value')
-                    label(for='rating-value-2')
-                    input#rating-value-3(type='radio', value='3', name='value')
-                    label(for='rating-value-3')
-                    input#rating-value-4(type='radio', value='4', name='value')
-                    label(for='rating-value-4')
-                    input#rating-value-5(type='radio', value='5', name='value')
-                    label(for='rating-value-5')
-                  // /.col-sm-3
-                  .form-group.input-rating.col-sm-3
-                    .rating-title Atmosphere
-                    input#rating-atmosphere-1(type='radio', value='1', name='atmosphere')
-                    label(for='rating-atmosphere-1')
-                    input#rating-atmosphere-2(type='radio', value='2', name='atmosphere')
-                    label(for='rating-atmosphere-2')
-                    input#rating-atmosphere-3(type='radio', value='3', name='atmosphere')
-                    label(for='rating-atmosphere-3')
-                    input#rating-atmosphere-4(type='radio', value='4', name='atmosphere')
-                    label(for='rating-atmosphere-4')
-                    input#rating-atmosphere-5(type='radio', value='5', name='atmosphere')
-                    label(for='rating-atmosphere-5')
-                  // /.col-sm-3
-                // /.row
-                .row
-                  .form-group.col-sm-6
-                    label(for='') Pros
-                    textarea.form-control(rows='5', id='')
-                    .textarea-resize
-                  // /.col-sm-6
-                  .form-group.col-sm-6
-                    label(for='') Cons
-                    textarea.form-control(rows='5', id='')
-                    .textarea-resize
-                  // /.col-sm-6
-                  .col-sm-8
-                    p
-                      | Required fields are marked 
-                      span.required *
-                  // /.col-sm-8
-                  .col-sm-4
-                    button.btn.btn-primary.btn-block(type='submit')
-                      i.fa.fa-star
-                      | Submit Review
-                  // /.col-sm-4
-                // /.row
+
+
             // /.col-*
           // /.row
         // /.container
