@@ -68,22 +68,24 @@ block content
           // /.page-title
           .cards-simple-wrapper
             .row
-              - var events = [1,2,3,4,5,6,7,8];
-              - each ev in events 
-                .col-sm-6.col-md-4.col-lg-3
-                  .card-simple(data-background-image="#{CDN('/img/events/1/header_banner.jpg', true)}", style='background-image: url(#{CDN("/img/events/1/header_banner.jpg", true)}')
-                    .card-simple-background
-                      .card-simple-content
-                        h2
-                          a(href='/events/1/super-marathon') Antwerp Marathon
-                        .card-simple-actions
-                          a.fa.fa-search(href='/events/1/super-marathon')
-                        // /.card-simple-actions
-                      // /.card-simple-content
-                      .card-simple-label Sports
-                    // /.card-simple-background
-                  // /.card-simple
-                // /.col-*
+              - if (gigs.length > 0)
+                - each gig in gigs
+                  .col-sm-6.col-md-4.col-lg-3
+                    .card-simple(data-background-image="#{gig.header}", style='background-image: url(#{gig.header}')
+                      .card-simple-background
+                        .card-simple-content
+                          h2
+                            a(href='/events/#{gig.id}/#{gig.slug}') #{gig.title}
+                          .card-simple-actions
+                            a.fa.fa-search(href='/events/#{gig.id}/#{gig.slug}')
+                          // /.card-simple-actions
+                        // /.card-simple-content
+                        .card-simple-label #{gig.main_tag}
+                      // /.card-simple-background
+                    // /.card-simple
+                  // /.col-*
+              - else
+                p Sorry, no gigs yet...
             // /.row
           // /.cards-simple-wrapper
           //- .pager

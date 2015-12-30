@@ -17,7 +17,7 @@ GLOBAL.appConfig = require("./config/config");
 
 require('date-utils');
 
-// GLOBAL.db       = require('./models/mysql/index');
+GLOBAL.db       = require('./models/mysql/index');
 
 // Setup express
 var app = express();

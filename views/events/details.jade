@@ -5,20 +5,18 @@ block content
     .main-inner
       .content
         .mt-80.mb80
-          .detail-banner(style='background-image: url(#{CDN("/img/events/1/header_banner.jpg", true)});')
+          .detail-banner(style='background-image: url(#{gig.header});')
             .container
               .detail-banner-left
                 .detail-banner-info
-                  .detail-label Sport
-                  .detail-verified Running
-                  .detail-verified Marathon
-                  .detail-verified Outdoor
+                  - each tag in gig.all_tags
+                    .detail-verified #{tag}
                 // /.detail-banner-info
                 h2.detail-title
-                  | Antwerp Marathon
+                  | #{gig.title}
                 .detail-banner-address
                   i.fa.fa-map-o
-                  |  Londenstraat 1, Antwerp, Belgium
+                  | #{gig.location}
                 // /.detail-banner-address
                 a(href="#sponsor-form-cnt").detail-banner-btn
                   i.fa.fa-usd
@@ -33,32 +31,18 @@ block content
             .col-sm-7
               .detail-gallery
                 .detail-gallery-preview
-                  a.cboxElement(href='#{CDN("/img/events/1/gallery/1.jpg", true)}')
-                    img(src='#{CDN("/img/events/1/gallery/1.jpg", true)}')
+                  a.cboxElement(href='#{gig.gallery[0]}')
+                    img(src='#{gig.gallery[0]}')
                 ul.detail-gallery-index
-                  li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/img/events/1/gallery/1.jpg", true)}')
-                      img(src='#{CDN("/img/events/1/gallery/1.jpg", true)}', alt='...')
-                  li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/img/events/1/gallery/2.jpg", true)}')
-                      img(src='#{CDN("/img/events/1/gallery/2.jpg", true)}', alt='...')
-                  li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/img/events/1/gallery/3.jpg", true)}')
-                      img(src='#{CDN("/img/events/1/gallery/3.jpg", true)}', alt='...')
-                  li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/img/events/1/gallery/4.jpg", true)}')
-                      img(src='#{CDN("/img/events/1/gallery/4.jpg", true)}', alt='...')
-                  li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/img/events/1/gallery/5.jpg", true)}')
-                      img(src='#{CDN("/img/events/1/gallery/5.jpg", true)}', alt='...')
-                  li.detail-gallery-list-item.active
-                    a(data-target='#{CDN("/img/events/1/gallery/6.jpg", true)}')
-                      img(src='#{CDN("/img/events/1/gallery/6.jpg", true)}', alt='...')
+                  - each pic in gig.gallery
+                    li.detail-gallery-list-item.active
+                      a(data-target='#{pic}')
+                        img(src='#{pic}', alt='...')
               // /.detail-gallery
               
               h2 Video
               .detail-video
-                iframe(width="640", height="360", src="https://www.youtube.com/embed/iaI5e8F4CWA", frameborder="0", allowfullscreen=true)
+                | !{gig.video}
               // /.detail-video
 
               h2 Happening here
@@ -78,23 +62,23 @@ block content
                   #simple-map-panel.tab-pane.fade.in.active(role='tabpanel')
                     .detail-map
                       .map-position
-                        #listing-detail-map(data-transparent-marker-image='#{CDN("/theme/img/transparent-marker-image.png", true)}', data-styles='[{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.government","elementType":"labels.text.fill","stylers":[{"color":"#b43b3b"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"lightness":"8"},{"color":"#bcbec0"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#5b5b5b"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7cb3c9"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#abb9c0"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"color":"#fff1f1"},{"visibility":"off"}]}]', data-zoom='15', data-latitude='51.2310564', data-longitude='4.4075833', data-icon='fa fa-calendar-check-o')
+                        #listing-detail-map(data-transparent-marker-image='#{CDN("/theme/img/transparent-marker-image.png", true)}', data-styles='[{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.government","elementType":"labels.text.fill","stylers":[{"color":"#b43b3b"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"lightness":"8"},{"color":"#bcbec0"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#5b5b5b"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7cb3c9"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#abb9c0"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"color":"#fff1f1"},{"visibility":"off"}]}]', data-zoom='15', data-latitude='#{gig.lat}', data-longitude='#{gig.lng}', data-icon='fa fa-calendar-check-o')
                         // /#map-property
                       // /.map-property
                     // /.detail-map
                   #street-view-panel.tab-pane.fade(role='tabpanel')
-                    #listing-detail-street-view(data-latitude='40.758896', data-longitude='-73.985135', data-heading='225', data-pitch='0', data-zoom='1')
+                    #listing-detail-street-view(data-latitude='#{gig.lat}', data-longitude='#{gig.lng}', data-heading='225', data-pitch='0', data-zoom='1')
 
             // /.col-sm-7
             .col-sm-5
               .background-white.p20
                 .detail-overview-hearts
                   i.fa.fa-calendar
-                  strong 12 Oct 2016 
-                  | - 13 Oct 2016
+                  strong #{gig.start_date.toFormat('D MMM YYYY')} 
+                  | - #{gig.end_date.toFormat('D MMM YYYY')}
                 .detail-overview-rating
                   i.fa.fa-users
-                  strong 100K 
+                  strong #{gig.visitors} 
                   | people are attending
                 .detail-actions.row
                   .col-sm-6
@@ -127,61 +111,25 @@ block content
                 // /.detail-actions
               h2
                 | About 
-                span.text-secondary Antwerp Marathon
+                span.text-secondary #{gig.title}
               .background-white.p20
                 .detail-description
-                  p
-                    strong DVV Antwerp Marathon
-                  ul
-                    li Start: 9:00 a.m. on Linkeroever (Thonetlaan nr. 110)
-                    li Finish: Grote Markt, Rechteroever
-                    li Course: 42,195 km (IAAF measured)
-                    li Time limit: 5 hours 30 minutes
-                  p
-                    strong Chiquita Kids Run 1.4 km
-                  ul
-                    li Start: 11:00 a.m. on Linkeroever (Thonetlaan)
-                    li Finish: on Linkeroever (Charles De Costerlaan)
-                    li Fun Run (no time registration!) for kids between 4 and 12 years of age
-                  p
-                    strong DVV Antwerp Short Run 5 km
-                  ul
-                    li Start: 12:00 noon on Linkeroever (Thonetlaan)
-                    li Finish: on Linkeroever (Charles De Costerlaan)
-                  p
-                    strong NEW BALANCE Ladies Run 5 km
-                  ul
-                    li Start: 1:00 p.m. on Linkeroever (Thonetlaan)
-                    li Finish: on Linkeroever (Charles De Costerlaan)
-                    li Ladies only race
-                    li
-                  p
-                    strong DVV Antwerp 10 Miles
-                  ul
-                    li
-                      | Start: on Linkeroever (Thonetlaan)
-                      br
-                      |   Wave 1: 3:00 p.m.
-                      br
-                      |   Wave 2: 3:30 p.m.
-                      br
-                      |   Wave 3: 4:00 p.m.
-                    li Finish: on Linkeroever (Charles De Costerlaan)
-                    li Course: 10 English miles or 16 km
-                    li Time Limit: 2 hours 15 minutes
+                  | !{gig.description}
                 .detail-follow
                   h5 Follow Us:
                   .follow-wrapper
-                    a.follow-btn.facebook(href='#')
-                      i.fa.fa-facebook
-                    a.follow-btn.youtube(href='#')
-                      i.fa.fa-youtube
-                    a.follow-btn.twitter(href='#')
-                      i.fa.fa-twitter
-                    a.follow-btn.tripadvisor(href='#')
-                      i.fa.fa-tripadvisor
-                    a.follow-btn.google-plus(href='#')
-                      i.fa.fa-google-plus
+                    - if (gig.facebook)
+                      a.follow-btn.facebook(href='#{gig.facebook}', target="_blank")
+                        i.fa.fa-facebook
+                    - if (gig.youtube)
+                      a.follow-btn.youtube(href='#{gig.youtube}', target="_blank")
+                        i.fa.fa-youtube
+                    - if (gig.twitter)
+                      a.follow-btn.twitter(href='#{gig.twitter}', target="_blank")
+                        i.fa.fa-twitter
+                    - if (gig.gplus)
+                      a.follow-btn.google-plus(href='#{gig.gplus}', target="_blank")
+                        i.fa.fa-google-plus
                   // /.follow-wrapper
                 // /.detail-follow
               
@@ -189,36 +137,32 @@ block content
               .background-white.p20
                 .detail-vcard
                   .detail-logo
-                    img(src='#{CDN("/img/events/1/logo.jpg", true)}')
+                    img(src='#{gig.logo}')
                   // /.detail-logo
                   .detail-contact
                     .detail-contact-name
                       i.fa.fa-user
-                      | Jan Peeters
+                      | #{gig.organizer}
                     .detail-contact-email
                       i.fa.fa-envelope-o
-                      a(href='mailto:contact+am@sponsorgigs.com') contact+am@sponsorgigs.com
+                      a(href='mailto:#{gig.email}') #{gig.email}
                     .detail-contact-phone
                       i.fa.fa-mobile-phone
-                      a(href='tel:033 - 330 29 88') 033 - 330 29 88
+                      a(href='tel:#{gig.phone}') #{gig.phone}
                     .detail-contact-website
                       i.fa.fa-globe
-                      a(href='http://www.sport.be/antwerp10miles/2016/en/') www.sport.be/antwerp10miles
+                      a(href='#{gig.site_url}', target="_blank") #{gig.site}
                     .detail-contact-address
                       i.fa.fa-map-o
-                      |                         Londenstraat 1, Antwerp
-                      br
-                      |                         Belgium
+                      | #{gig.location}
                   // /.detail-contact
                 // /.detail-vcard
 
               h2 Tags
               .background-white.p20
                 ul.detail-amenities
-                  li.yes Sports
-                  li.yes Outdoor
-                  li.yes Marathon
-                  li.yes Running
+                  - each tag in gig.all_tags
+                    li.yes #{tag}
               // /.detail-amenities
 
             .col-sm-12
