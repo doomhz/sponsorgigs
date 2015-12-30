@@ -1,8 +1,12 @@
+Gig = GLOBAL.db.Gig
+
 module.exports = (app)->
 
   app.get "/", (req, res)->
-    res.render "site/index",
-      currentPage: "home"
+    Gig.findEnabledFirstPage (err, gigs)->
+      res.render "site/index",
+        currentPage: "home"
+        gigs: gigs
 
   app.get "/contact", (req, res)->
     res.render "site/contact",
