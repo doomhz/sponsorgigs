@@ -20,3 +20,13 @@ module.exports = (app)->
 
   app.get "/events/add", (req, res)->
     res.render "events/add"
+
+  app.post "/events/add", (req, res)->
+    gigData = req.body
+    Gig.createFromRequest(gigData).complete (err, gig)->
+      if err
+        console.error err
+        res.statusCode = 400
+        res.json {}
+      res.json
+        redirect_url: "/events/add"

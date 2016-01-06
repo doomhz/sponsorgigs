@@ -1,5 +1,6 @@
 AppHelper = require "../../lib/app_helper"
 _         = require "underscore"
+_.str     = require "underscore.string"
 
 module.exports = (sequelize, DataTypes) ->
 
@@ -108,5 +109,23 @@ module.exports = (sequelize, DataTypes) ->
 
         findById: (id, callback = ->)->
           Gig.find(id).complete callback
+
+        createFromRequest: (gigData, callback = ->)->
+          gigData.geo = "#{gigData.lat}|#{gigData.lng}"
+          gigData.tags = gigData.tags.replace /,/g, "|"
+          gigData.pics = ""
+          gigData.pics += "[logo]#{gigData.logo[0]}\n"  if gigData.logo[0]
+          gigData.pics += "[header]#{gigData.header[0]}\n"  if gigData.header[0]
+          for pic in gigData.gallery
+            gigData.pics += "[gallery]#{pic}\n"
+          gigData.pics = _.str.trim gigData.pics
+          gigData.social = ""
+          gigData.social += "[twitter]#{gigData.twitter}\n"  if gigData.twitter
+          gigData.social += "[facebook]#{gigData.facebook}\n"  if gigData.facebook
+          gigData.social += "[youtube]#{gigData.youtube}\n"  if gigData.youtube
+          gigData.social += "[gplus]#{gigData.gplus}\n"  if gigData.gplus
+          gigData.social = _.str.trim gigData.social
+          Gig.create(gigData).complete callback
+
 
   Gig
