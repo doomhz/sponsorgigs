@@ -13,9 +13,13 @@ $ ->
       $image.addClass "file-preview-image"
       $image.data "url", data.result.url
       $imageCnt = $("<div class='file-preview-frame'></div>").append $image
+      $actionButtons = $("<div class='row'><button class='button btn btn-danger delete' type='button'>X</button></div>")
+      $imageCnt.append $actionButtons
       $cnt.find(".file-preview-frame").remove()  if options.replace
       $cnt.find(".gallery-preview").prepend $imageCnt
       $cnt.find(".upload-gallery-progress").addClass "hidden"
+      $actionButtons.click ->
+        $imageCnt.remove()
     .bind "cloudinaryprogress", (e, data) ->
       progress = Math.round(data.loaded * 100.0 / data.total)
       $pb = $cnt.find(".upload-gallery-progress")
