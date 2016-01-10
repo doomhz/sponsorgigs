@@ -11,19 +11,24 @@ $ ->
         height: 160
         crop: 'thumb'
       $image.addClass "file-preview-image"
-      $image.data "url", data.result.url
       $imageCnt = $("<div class='file-preview-frame'></div>").append $image
       $actionButtons = $("<div class='row'><button class='button btn btn-danger delete' type='button'>X</button></div>")
       $imageCnt.append $actionButtons
       $cnt.find(".file-preview-frame").remove()  if options.replace
       $cnt.find(".gallery-preview").prepend $imageCnt
       $cnt.find(".upload-gallery-progress").addClass "hidden"
-      $actionButtons.click ->
-        $imageCnt.remove()
     .bind "cloudinaryprogress", (e, data) ->
       progress = Math.round(data.loaded * 100.0 / data.total)
       $pb = $cnt.find(".upload-gallery-progress")
       $pb.removeClass("hidden").find(".progress-bar").css("width",  "#{progress}%").text("#{progress}%")
+    if $cnt.data("pics").length
+      pics = $cnt.data("pics").split "|"
+      picsHTML = ""
+      for picUrl in pics
+        picsHTML += "<div class='file-preview-frame'><img src='#{picUrl}' class='file-preview-image'><div class='row'><button class='button btn btn-danger delete' type='button'>X</button></div></div>"
+      $cnt.find(".gallery-preview").html picsHTML
+    $cnt.on "click", ".delete", (ev)->
+      $(@).parents(".file-preview-frame:first").remove()
 
   handleUpload "#gallery-pics-upload-cnt"
   handleUpload "#header-pic-upload-cnt", {replace: true}
@@ -36,14 +41,17 @@ $ ->
     galleries = {"#gallery-pics-upload-cnt": "gallery", "#header-pic-upload-cnt": "header", "#logo-upload-cnt": "logo"}
     for id, type of galleries
       $form.find("#{id} img").each (i, el)->
-        url = $(el).data "url"
+        url = $(el).attr "src"
         $form.prepend "<input type='hidden' name='#{type}[]' value='#{url}'>"
     $.ajax
       type: "POST"
-      url: $form.action
+      url: $form.attr "action"
       data: $form.serialize()
       dataType: "json"
       success: (response)->
         window.location = response.redirect_url
       error: ->
         alert "Could not add event, please contact support."
+
+  $("#new-event-form").find("input").on "keypress", (event)->
+    return event.keyCode != 13

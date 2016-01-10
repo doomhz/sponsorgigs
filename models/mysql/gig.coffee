@@ -73,7 +73,7 @@ module.exports = (sequelize, DataTypes) ->
           @title.toLowerCase().replace /[^a-z0-9]/g, "-"
 
         all_tags: ->
-          @tags.split("|")
+          @tags.split(",")
 
         main_tag: ->
           @all_tags[0]
@@ -110,14 +110,14 @@ module.exports = (sequelize, DataTypes) ->
         findById: (id, callback = ->)->
           Gig.find(id).complete callback
 
-        createFromRequest: (gigData, callback = ->)->
+        createOrUpdateFromRequest: (gigData, callback = ->)->
           gigData.geo = "#{gigData.lat}|#{gigData.lng}"
-          gigData.tags = gigData.tags.replace /,/g, "|"
           gigData.pics = ""
-          gigData.pics += "[logo]#{gigData.logo[0]}\n"  if gigData.logo[0]
-          gigData.pics += "[header]#{gigData.header[0]}\n"  if gigData.header[0]
-          for pic in gigData.gallery
-            gigData.pics += "[gallery]#{pic}\n"
+          gigData.pics += "[logo]#{gigData.logo[0]}\n"  if gigData.logo and gigData.logo[0]
+          gigData.pics += "[header]#{gigData.header[0]}\n"  if gigData.header and gigData.header[0]
+          if gigData.gallery
+            for pic in gigData.gallery
+              gigData.pics += "[gallery]#{pic}\n"
           gigData.pics = _.str.trim gigData.pics
           gigData.social = ""
           gigData.social += "[twitter]#{gigData.twitter}\n"  if gigData.twitter
@@ -125,7 +125,9 @@ module.exports = (sequelize, DataTypes) ->
           gigData.social += "[youtube]#{gigData.youtube}\n"  if gigData.youtube
           gigData.social += "[gplus]#{gigData.gplus}\n"  if gigData.gplus
           gigData.social = _.str.trim gigData.social
-          Gig.create(gigData).complete callback
-
+          return Gig.create(gigData).complete callback  if not gigData.id
+          Gig.update(gigData, {id: gigData.id}).complete (err)->
+            return callback err  if err
+            Gig.findById gigData.id, callback
 
   Gig

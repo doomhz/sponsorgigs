@@ -1,0 +1,155 @@
+form#new-event-form(action="/events", method="post")
+
+  input(type='hidden', name="id", value="#{gig.id || ''}")
+
+  // Event Details
+  .background-white.p30.mb30
+    h3.page-title Gig Details
+    .form-group
+      input.form-control(type='text', placeholder='Title', name="title", value="#{gig.title || ''}")
+    .row
+      .col-sm-6
+        .input-group
+          span.input-group-addon
+            i.fa.fa-calendar
+          input.form-control(type='date', placeholder='Start date', name="start_date", value="#{gig.start_date ? gig.start_date.toFormat('YYYY-MM-DD') : ''}")
+        .input-group
+          span.input-group-addon
+            i.fa.fa-users
+          input.form-control(type='text', placeholder='Number of visitors (i.e.: 9-100K)', name="visitors", value="#{gig.visitors || ''}")
+      .col-sm-6
+        .input-group
+          span.input-group-addon
+            i.fa.fa-calendar
+          input.form-control(type='date', placeholder='End date', name="end_date", value="#{gig.end_date ? gig.end_date.toFormat('YYYY-MM-DD') : ''}")
+        .input-group
+          span.input-group-addon
+            i.fa.fa-tag
+          input.form-control(type='text', placeholder='Tags (i.e: sports,cars,travel)', name="tags", value="#{gig.tags || ''}")
+    .form-group
+      textarea.form-control.html-editor(placeholder='Event Description', rows='14', name="description")
+        | #{gig.description || ''}
+
+  // Contact info
+  .background-white.p30.mb30
+    h3.page-title Contact Info
+    .row
+      .col-sm-6
+        .input-group
+          span.input-group-addon
+            i.fa.fa-user
+          input.form-control(type='text', placeholder='Organizer name', name="organizer", value="#{gig.organizer || ''}")
+        .input-group
+          span.input-group-addon
+            i.fa.fa-phone
+          input.form-control(type='text', placeholder='Phone', name="phone", value="#{gig.phone || ''}")
+      .col-sm-6
+        .input-group
+          span.input-group-addon
+            i.fa.fa-at
+          input.form-control(type='text', placeholder='E-mail', name="email", value="#{gig.email || ''}")
+        .input-group
+          span.input-group-addon
+            i.fa.fa-globe
+          input.form-control(type='text', placeholder='Website', name="site", value="#{gig.site || ''}")
+
+  // Social
+  .background-white.p30.mb30
+    h3.page-title Social Accounts
+    .row
+      .col-sm-6
+        .input-group
+          span.input-group-addon
+            i.fa.fa-facebook
+          input.form-control(type='text', placeholder='Facebook', name="facebook", value="#{gig.facebook || ''}")
+        .input-group
+          span.input-group-addon
+            i.fa.fa-twitter
+          input.form-control(type='text', placeholder='Twitter', name="twitter", value="#{gig.twitter || ''}")
+      .col-sm-6
+        .input-group
+          span.input-group-addon
+            i.fa.fa-youtube
+          input.form-control(type='text', placeholder='YouTube', name="youtube", value="#{gig.youtube || ''}")
+        .input-group
+          span.input-group-addon
+            i.fa.fa-google-plus
+          input.form-control(type='text', placeholder='Google+', name="gplus", value="#{gig.gplus || ''}")
+  
+  .row#location-cnt
+    // Detailed Location
+    .col-sm-12
+      .background-white.p30.mb30
+        h3.page-title
+          | Detailed Location
+          input#pac-input.controls.form-control.mb30(type='text', placeholder='Enter a location', name="location", value="#{gig.location || ''}")
+          #map-canvas
+          .row
+            .col-sm-6
+              .input-group
+                span.input-group-addon
+                  i.fa.fa-map-marker
+                input#input-latitude.form-control(type='text', placeholder='Latitude', name="lat", value="#{gig.lat || ''}")
+            .col-sm-6
+              .input-group
+                span.input-group-addon
+                  i.fa.fa-map-marker
+                input#input-longitude.form-control(type='text', placeholder='Longitude', name="lng", value="#{gig.lng || ''}")
+
+    // Video
+    .col-sm-12
+      .background-white.p30.mb30
+        h3.page-title Video Intro
+        .form-group
+          input.form-control(type='text', placeholder='Video code from YouTube', name="video", value="#{gig.video || ''}")
+
+    // Gallery
+    .col-sm-12
+      #gallery-pics-upload-cnt.background-white.p30.mb30(data-pics="#{gig.gallery ? gig.gallery.join('|') : ''}")
+        h3.page-title
+          | Gallery
+        .gallery-preview.file-preview
+          .clearfix
+        .upload-gallery
+        br
+        .upload-gallery-progress.progress.hidden
+          .progress-bar.progress-bar-striped.active(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+            | 0%
+
+    // Header image
+    .col-sm-12
+      #header-pic-upload-cnt.background-white.p30.mb30(data-pics="#{gig.header ? gig.header : ''}")
+        h3.page-title
+          | Header Image
+        .gallery-preview.file-preview
+          .clearfix
+        .upload-gallery
+        br
+        .upload-gallery-progress.progress.hidden
+          .progress-bar.progress-bar-striped.active(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+            | 0%
+
+    // Logo
+    .col-sm-12
+      #logo-upload-cnt.background-white.p30.mb30(data-pics="#{gig.logo ? gig.logo : ''}")
+        h3.page-title
+          | Logo
+        .gallery-preview.file-preview
+          .clearfix
+        .upload-gallery
+        br
+        .upload-gallery-progress.progress.hidden
+          .progress-bar.progress-bar-striped.active(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width:0%')
+            | 0%
+
+  .center
+    button.btn.btn-primary.btn-xl(type='submit') Save gig
+
+script(src="//cdn.tinymce.com/4/tinymce.min.js")
+script.
+  tinymce.init({
+    selector:'.html-editor',
+    plugins: ["link", "image", "table"],
+    
+    menubar: 'edit insert format table',
+  });
