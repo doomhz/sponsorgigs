@@ -8,10 +8,6 @@ block content
           .detail-banner(style='background-image: url(#{gig.header});')
             .container
               .detail-banner-left
-                .detail-banner-info
-                  - each tag in gig.all_tags
-                    .detail-verified #{tag}
-                // /.detail-banner-info
                 h2.detail-title
                   | #{gig.title}
                 .detail-banner-address
@@ -158,12 +154,12 @@ block content
                   // /.detail-contact
                 // /.detail-vcard
 
-              h2 Tags
-              .background-white.p20
-                ul.detail-amenities
-                  - each tag in gig.all_tags
-                    li.yes #{tag}
-              // /.detail-amenities
+              //- h2 Tags
+              //- .background-white.p20
+              //-   ul.detail-amenities
+              //-     - each tag in gig.all_tags
+              //-       li.yes #{tag}
+              //- // /.detail-amenities
 
             .col-sm-12
               h2#sponsor-form-cnt Sponsor details

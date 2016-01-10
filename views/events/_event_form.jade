@@ -103,11 +103,11 @@ form#new-event-form(action="/events", method="post")
         .form-group
           input.form-control(type='text', placeholder='Video code from YouTube', name="video", value="#{gig.video || ''}")
 
-    // Gallery
+    // Logo
     .col-sm-12
-      #gallery-pics-upload-cnt.background-white.p30.mb30(data-pics="#{gig.gallery ? gig.gallery.join('|') : ''}")
+      #logo-upload-cnt.background-white.p30.mb30(data-pics="#{gig.logo ? gig.logo : ''}")
         h3.page-title
-          | Gallery
+          | Logo
         .gallery-preview.file-preview
           .clearfix
         .upload-gallery
@@ -129,11 +129,11 @@ form#new-event-form(action="/events", method="post")
           .progress-bar.progress-bar-striped.active(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width:0%')
             | 0%
 
-    // Logo
+    // Gallery
     .col-sm-12
-      #logo-upload-cnt.background-white.p30.mb30(data-pics="#{gig.logo ? gig.logo : ''}")
+      #gallery-pics-upload-cnt.background-white.p30.mb30(data-pics="#{gig.gallery ? gig.gallery.join('|') : ''}")
         h3.page-title
-          | Logo
+          | Gallery
         .gallery-preview.file-preview
           .clearfix
         .upload-gallery
@@ -141,6 +141,7 @@ form#new-event-form(action="/events", method="post")
         .upload-gallery-progress.progress.hidden
           .progress-bar.progress-bar-striped.active(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width:0%')
             | 0%
+
 
   .center
     button.btn.btn-primary.btn-xl(type='submit') Save gig
@@ -150,6 +151,5 @@ script.
   tinymce.init({
     selector:'.html-editor',
     plugins: ["link", "image", "table"],
-    
     menubar: 'edit insert format table',
   });

@@ -10,6 +10,7 @@ $ ->
         width: 160
         height: 160
         crop: 'thumb'
+      $image.data "url", data.result.url
       $image.addClass "file-preview-image"
       $imageCnt = $("<div class='file-preview-frame'></div>").append $image
       $actionButtons = $("<div class='row'><button class='button btn btn-danger delete' type='button'>X</button></div>")
@@ -23,10 +24,19 @@ $ ->
       $pb.removeClass("hidden").find(".progress-bar").css("width",  "#{progress}%").text("#{progress}%")
     if $cnt.data("pics").length
       pics = $cnt.data("pics").split "|"
-      picsHTML = ""
       for picUrl in pics
-        picsHTML += "<div class='file-preview-frame'><img src='#{picUrl}' class='file-preview-image'><div class='row'><button class='button btn btn-danger delete' type='button'>X</button></div></div>"
-      $cnt.find(".gallery-preview").html picsHTML
+        $image = $.cloudinary.image picUrl,
+          cloud_name: "dhz"
+          format: 'jpg'
+          width: 160
+          height: 160
+          crop: 'thumb'
+        $image.data "url", picUrl
+        $image.addClass "file-preview-image"
+        $imageCnt = $("<div class='file-preview-frame'></div>").append $image
+        $actionButtons = $("<div class='row'><button class='button btn btn-danger delete' type='button'>X</button></div>")
+        $imageCnt.append $actionButtons
+        $cnt.find(".gallery-preview").prepend $imageCnt
     $cnt.on "click", ".delete", (ev)->
       $(@).parents(".file-preview-frame:first").remove()
 
@@ -41,7 +51,7 @@ $ ->
     galleries = {"#gallery-pics-upload-cnt": "gallery", "#header-pic-upload-cnt": "header", "#logo-upload-cnt": "logo"}
     for id, type of galleries
       $form.find("#{id} img").each (i, el)->
-        url = $(el).attr "src"
+        url = $(el).data "url"
         $form.prepend "<input type='hidden' name='#{type}[]' value='#{url}'>"
     $.ajax
       type: "POST"
@@ -55,3 +65,4 @@ $ ->
 
   $("#new-event-form").find("input").on "keypress", (event)->
     return event.keyCode != 13
+
