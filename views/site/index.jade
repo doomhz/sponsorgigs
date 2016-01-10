@@ -6,7 +6,7 @@ block content
       .content
         .mt-80
           .hero-image
-            .hero-image-inner(style="background-image: url(#{CDN('/img/home_header_1.jpg')};")
+            .hero-image-inner(style="background-image: url(#{CDN('/img/home_header_3.jpg')};")
               .hero-image-content
                 .container
                   h1 Sponsor events
@@ -25,14 +25,14 @@ block content
                         .hero-image-keyword.form-group
                           input.form-control(type='text', placeholder='Keyword')
                         // /.form-group
-                        .hero-image-location.form-group
-                          select.form-control(title='Location')
-                            option Antwerp
-                        // /.form-group
-                        .hero-image-category.form-group
-                          select.form-control(title='Category')
-                            option(value='sports') Sports
-                        // /.form-group
+                        //- .hero-image-location.form-group
+                        //-   select.form-control(title='Location')
+                        //-     option Antwerp
+                        //- // /.form-group
+                        //- .hero-image-category.form-group
+                        //-   select.form-control(title='Category')
+                        //-     option(value='sports') Sports
+                        //- // /.form-group
                         //- .hero-image-price.form-group
                         //-   input.form-control(type='text', placeholder='Min. Price')
                         // /.form-group
@@ -391,38 +391,19 @@ block content
                         i.fa.fa-star
                       // /.testimonial-rating
                     // /.testimonial-title
-                    | Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. Donec vel enim sit amet lorem vulputate condimentum.
-                    .testimonial-sign - Marko Eres
+                    | I am thankful this service exists, because I have doubts our event would have even taken place without it... Everyone was professional and the communication ran smoothly, which I appreciated.
+                    .testimonial-sign - Alex Lam
                     // /.testimonial-sign
                   // /.testimonial-inner
                 // /.testimonial
+              .col-sm-6
                 .testimonial
-                  .testimonial-image
-                    img(src="#{CDN('/img/testimonials/james.jpg', true)}")
-                  // /.testimonial-image
-                  .testimonial-inner
-                    .testimonial-title
-                      h2 Best Support Ever
-                      .testimonial-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.testimonial-rating
-                    // /.testimonial-title
-                    | Duis et magna vel est tempus vehicula vitae sit amet enim. Sed vitae ligula congue, luctus mauris eu, scelerisque felis.
-                    .testimonial-sign - James Franco
-                    // /.testimonial-sign
-                  // /.testimonial-inner
-                // /.testimonial
-                .testimonial.last
                   .testimonial-image
                     img(src="#{CDN('/img/testimonials/marko.jpg', true)}")
                   // /.testimonial-image
                   .testimonial-inner
                     .testimonial-title
-                      h2 Best Directory
+                      h2 Great Sponsor Platform
                       .testimonial-rating
                         i.fa.fa-star
                         i.fa.fa-star
@@ -431,151 +412,19 @@ block content
                         i.fa.fa-star
                       // /.testimonial-rating
                     // /.testimonial-title
-                    | Duis et magna vel est tempus vehicula vitae sit amet enim. Sed vitae ligula congue, luctus mauris eu, scelerisque felis.
-                    .testimonial-sign - Jason Statham
+                    | Great platform if you're looking for local events to promote your business, an effective way to spread the word and network, from my experience.
+                    .testimonial-sign - Jason Rodriguez
                     // /.testimonial-sign
                   // /.testimonial-inner
                 // /.testimonial
-              // /.col-*
-              .col-sm-6
-                .testimonial
-                  .testimonial-image
-                    img(src="#{CDN('/img/testimonials/vin.jpg', true)}")
-                  // /.testimonial-image
-                  .testimonial-inner
-                    .testimonial-title
-                      h2 Totally Impressed
-                      .testimonial-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.testimonial-rating
-                    // /.testimonial-title
-                    | Curabitur scelerisque nulla consequat elit semper, vitae lobortis velit tempor. Sed purus eros, pellentesque non maximus scelerisque, aliquam id magna. Integer in metus ante. Integer faucibus mi quis rhoncus cursus.
-                    .testimonial-sign - Vin Diesel
-                    // /.testimonial-sign
-                  // /.testimonial-inner
-                // /.testimonial
-                .testimonial.last
-                  .testimonial-image
-                    img(src="#{CDN('/img/testimonials/bruce.jpg', true)}")
-                  // /.testimonial-image
-                  .testimonial-inner
-                    .testimonial-title
-                      h2 Awesome Directory 
-                      .testimonial-rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                      // /.testimonial-rating
-                    // /.testimonial-title
-                    | Donec finibus consectetur nunc, quis viverra nisi iaculis a. Donec non eros vel turpis bibendum sodales. Curabitur scelerisque nulla consequat elit semper, vitae lobortis velit tempor. Sed purus eros, pellentesque non maximus scelerisque, aliquam id magna. Integer in metus ante. Integer faucibus mi quis rhoncus cursus. Aliquam malesuada eleifend tellus, sit amet eleifend lacus aliquam in. Etiam a neque ut augue mattis gravida vel vel purus. Nullam bibendum viverra enim, in pretium purus.
-                    .testimonial-sign - Bruce Willis
-                    // /.testimonial-sign
-                  // /.testimonial-inner
-                // /.testimonial
-              // /.col-*
+
           .page-header
-            h1 Fair Pricing
+            h1 Limited Offer
             p
-              | Our company offers best pricing options for field agents and companies. If you are interested 
-              br
-              | in special plan don't hesitate and contact our 
-              a(href='#') sales support
-              | .
+              | Use this limited-time offer and post your event for free.
+            p.center
+              a(href="/events/add", class="btn btn-primary btn-lg") Add your event for FREE!
           // /.page-header
-          .pricings
-            .row
-              .col-sm-4
-                .pricing
-                  .pricing-title Personal
-                  // /.pricing-title
-                  .pricing-subtitle For Personal Use
-                  // /.pricing-subtitle
-                  .pricing-price
-                    span.pricing-currency $
-                    | 10.59 
-                    span.pricing-period / month
-                  // /.pricing-price
-                  a.btn-primary(href='#') Get Started
-                  hr
-                  ul.pricing-list
-                    li
-                      span Max. Submissions
-                      strong Limited number
-                    li
-                      span Custom Agents
-                      strong One agent for all
-                    li
-                      span Support
-                      strong Mail communication
-                  // /.pricing-list
-                  hr
-                  a.pricing-action(href='#') Full List of Features
-                // /.pricing
-              // /.col-*
-              .col-sm-4
-                .pricing
-                  .pricing-title Business
-                  // /.pricing-title
-                  .pricing-subtitle Best for Companies
-                  // /.pricing-subtitle
-                  .pricing-price
-                    span.pricing-currency $
-                    | 19.59 
-                    span.pricing-period / month
-                  // /.pricing-price
-                  a.btn-primary(href='#') Get Started
-                  hr
-                  ul.pricing-list
-                    li
-                      span Max. Submissions
-                      strong Unlimited number
-                    li
-                      span Custom Agents
-                      strong One agent for all
-                    li
-                      span Support
-                      strong Mail communication
-                  // /.pricing-list
-                  hr
-                  a.pricing-action(href='#') Full List of Features
-                // /.pricing
-              // /.col-*
-              .col-sm-4
-                .pricing
-                  .pricing-title Unlimited
-                  // /.pricing-title
-                  .pricing-subtitle Entrepreneurs
-                  // /.pricing-subtitle
-                  .pricing-price
-                    span.pricing-currency $
-                    | 49.59 
-                    span.pricing-period / month
-                  // /.pricing-price
-                  a.btn-primary(href='#') Get Started
-                  hr
-                  ul.pricing-list
-                    li
-                      span Max. Submissions
-                      strong Unlimited number
-                    li
-                      span Custom Agents
-                      strong Unlimited number
-                    li
-                      span Support
-                      strong Personal training
-                  // /.pricing-list
-                  hr
-                  a.pricing-action(href='#') Full List of Features
-                // /.pricing
-              // /.col-*
-            // /.row
-          // /.pricings
 
           //- .block.background-white.fullwidth.mt80.mb-80
           //-   .categories
@@ -799,11 +648,11 @@ block content
                   .contact-info
                     span.contact-info-item
                       i.fa.fa-at
-                      span support@sponsorgigs.com
+                      span contact@sponsorgigs.com
                     // /.contact-info-item
                     span.contact-info-item
                       i.fa.fa-phone
-                      span +123-456-789
+                      span +1 (650) 924-9925
                     // /.contact-info-item
                   // /.contact-info
                 // /.contact-info-wrapper
