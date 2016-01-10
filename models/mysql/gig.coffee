@@ -73,15 +73,18 @@ module.exports = (sequelize, DataTypes) ->
           @title.toLowerCase().replace /[^a-z0-9]/g, "-"
 
         all_tags: ->
+          return null  if not @tags
           @tags.split(",")
 
         main_tag: ->
           @all_tags[0]
 
         lat: ->
+          return null  if not @geo
           @geo.split("|")[0]
 
         lng: ->
+          return null  if not @geo
           @geo.split("|")[1]
 
         site_url: ->
