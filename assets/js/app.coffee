@@ -40,9 +40,9 @@ $ ->
     $cnt.on "click", ".delete", (ev)->
       $(@).parents(".file-preview-frame:first").remove()
 
-  handleUpload "#gallery-pics-upload-cnt"
-  handleUpload "#header-pic-upload-cnt", {replace: true}
-  handleUpload "#logo-upload-cnt", {replace: true}
+  handleUpload "#gallery-pics-upload-cnt"  if $("#gallery-pics-upload-cnt").length
+  handleUpload "#header-pic-upload-cnt", {replace: true}  if $("#header-pic-upload-cnt").length
+  handleUpload "#logo-upload-cnt", {replace: true}  if $("#logo-upload-cnt").length
 
   $("#new-event-form").submit (ev)->
     ev.preventDefault()
@@ -65,4 +65,32 @@ $ ->
 
   $("#new-event-form").find("input").on "keypress", (event)->
     return event.keyCode != 13
+
+  $("#contact-form").submit (ev)->
+    ev.preventDefault()
+    $form = $(@)
+    $.ajax
+      type: "POST"
+      url: $form.attr "action"
+      data: $form.serialize()
+      dataType: "json"
+      success: (response)->
+        $form.prev(".bg-message").removeClass "hidden"
+        $form.hide()
+      error: ->
+        alert "Could not send message, please contact support."
+
+  $("#sponsor-invest-form").submit (ev)->
+    ev.preventDefault()
+    $form = $(@)
+    $.ajax
+      type: "POST"
+      url: $form.attr "action"
+      data: $form.serialize()
+      dataType: "json"
+      success: (response)->
+        $form.prev(".bg-message").removeClass "hidden"
+        $form.hide()
+      error: ->
+        alert "Could not send message, please contact support."
 

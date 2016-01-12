@@ -39,22 +39,19 @@ block content
             .col-sm-12
               h3 We’d love to hear from you
               .contact-form-wrapper.clearfix.background-white.p30
-                form.contact-form(method='post', action='/contact')
+                p.hidden.bg-message.bg-success
+                  | Thanks for contacting us, one of our agents will contact you soon.
+                form#contact-form.contact-form(method='post', action='/contact')
                   .form-group
                     label(for='contact-form-name') Name
-                    input#contact-form-name.form-control(type='text', name='name')
-                  // /.form-group
-                  .form-group
-                    label(for='contact-form-subject') Subject
-                    input#contact-form-subject.form-control(type='text', name='subject')
-                  // /.form-group
+                    input#contact-form-name.form-control(type='text', name='name', required)
                   .form-group
                     label(for='contact-form-email') E-mail
-                    input#contact-form-email.form-control(type='text', name='email')
-                  // /.form-group
+                    input#contact-form-email.form-control(type='email', name='email', required)
+                  .form-group
+                    label(for='contact-form-subject') Subject
+                    input#contact-form-subject.form-control(type='text', name='subject', required)
                   .form-group
                     label(for='contact-form-message') Message
-                    textarea#contact-form-message.form-control(rows='6')
-                  // /.form-group
+                    textarea#contact-form-message.form-control(rows='6', name="message", required)
                   button.btn.btn-primary.pull-right Post Message
-                // /.contact-form

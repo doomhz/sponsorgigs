@@ -165,23 +165,24 @@ block content
               h2#sponsor-form-cnt Sponsor details
               p.background-white.p20 Please complete the form bellow and we'll contact you with further details about how to become a sponsor. Thank you.
               .detail-enquire-form.background-white.p20
-                form(method='post', action='?')
+                p.hidden.bg-message.bg-success
+                  | Thanks for showing your interest in the gig above, one of our agents will contact you soon.
+                form#sponsor-invest-form(method='post', action='/invest')
                   .form-group
                     label(for='')
                       | Name
                       span.required *
-                    input.form-control(type='text', name='name', id='name', required='')
+                    input.form-control(type='text', name='name', id='name', required)
                   // /.form-group
                   .form-group
                     label(for='')
                       | Email 
                       span.required *
-                    input.form-control(type='email', name='email', id='email', required='')
+                    input.form-control(type='email', name='email', id='email', required)
                   .form-group
                     label(for='')
                       | Phone 
-                      span.required *
-                    input.form-control(type='text', name='phone', id='phone', required='')
+                    input.form-control(type='text', name='phone', id='phone')
                   // /.form-group
                   p
                     | Required fields are marked 

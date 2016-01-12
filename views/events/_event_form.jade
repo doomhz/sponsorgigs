@@ -10,16 +10,16 @@ form#new-event-form(action="/events", method="post")
         .input-group
           span.input-group-addon
             i.fa.fa-user
-          input.form-control(type='text', placeholder='Organizer name', name="organizer", value="#{gig.organizer || ''}")
+          input.form-control(type='text', placeholder='Organizer name', name="organizer", value="#{gig.organizer || ''}", required)
+        .input-group
+          span.input-group-addon
+            i.fa.fa-at
+          input.form-control(type='text', placeholder='E-mail', name="email", value="#{gig.email || ''}", required)
+      .col-sm-6
         .input-group
           span.input-group-addon
             i.fa.fa-phone
           input.form-control(type='text', placeholder='Phone', name="phone", value="#{gig.phone || ''}")
-      .col-sm-6
-        .input-group
-          span.input-group-addon
-            i.fa.fa-at
-          input.form-control(type='text', placeholder='E-mail', name="email", value="#{gig.email || ''}")
         .input-group
           span.input-group-addon
             i.fa.fa-globe
@@ -29,13 +29,13 @@ form#new-event-form(action="/events", method="post")
   .background-white.p30.mb30
     h3.page-title Gig Details
     .form-group
-      input.form-control(type='text', placeholder='Title', name="title", value="#{gig.title || ''}")
+      input.form-control(type='text', placeholder='Title', name="title", value="#{gig.title || ''}", required)
     .row
       .col-sm-6
         .input-group
           span.input-group-addon
             i.fa.fa-calendar
-          input.form-control(type='date', placeholder='Start date', name="start_date", value="#{gig.start_date ? gig.start_date.toFormat('YYYY-MM-DD') : ''}")
+          input.form-control(type='date', placeholder='Start date', name="start_date", value="#{gig.start_date && gig.start_date.toFormat ? gig.start_date.toFormat('YYYY-MM-DD') : ''}")
         .input-group
           span.input-group-addon
             i.fa.fa-users
@@ -44,11 +44,11 @@ form#new-event-form(action="/events", method="post")
         .input-group
           span.input-group-addon
             i.fa.fa-calendar
-          input.form-control(type='date', placeholder='End date', name="end_date", value="#{gig.end_date ? gig.end_date.toFormat('YYYY-MM-DD') : ''}")
+          input.form-control(type='date', placeholder='End date', name="end_date", value="#{gig.end_date && gig.start_date.toFormat ? gig.end_date.toFormat('YYYY-MM-DD') : ''}")
         .input-group
           span.input-group-addon
             i.fa.fa-tag
-          input.form-control(type='text', placeholder='Tags (i.e: sports,cars,travel)', name="tags", value="#{gig.tags || ''}")
+          input.form-control(type='text', placeholder='Tags (i.e: sports,cars,travel)', name="tags", value="#{gig.tags || ''}", required)
     .form-group
       textarea.form-control.html-editor(placeholder='Event Description', rows='14', name="description")
         | #{gig.description || ''}
@@ -153,3 +153,4 @@ script.
     plugins: ["link", "image", "table"],
     menubar: 'edit insert format table',
   });
+
