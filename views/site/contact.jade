@@ -43,15 +43,26 @@ block content
                   | Thanks for contacting us, one of our agents will contact you soon.
                 form#contact-form.contact-form(method='post', action='/contact')
                   .form-group
-                    label(for='contact-form-name') Name
+                    label(for='contact-form-name')
+                      | Name
+                      span.required *
                     input#contact-form-name.form-control(type='text', name='name', required)
                   .form-group
-                    label(for='contact-form-email') E-mail
+                    label(for='contact-form-email')
+                      | E-mail
+                      span.required *
                     input#contact-form-email.form-control(type='email', name='email', required)
                   .form-group
-                    label(for='contact-form-subject') Subject
+                    label(for='contact-form-subject')
+                      | Subject
+                      span.required *
                     input#contact-form-subject.form-control(type='text', name='subject', required)
                   .form-group
-                    label(for='contact-form-message') Message
+                    label(for='contact-form-message')
+                      | Message
+                      span.required *
                     textarea#contact-form-message.form-control(rows='6', name="message", required)
+                  p
+                    | Required fields are marked 
+                    span.required *
                   button.btn.btn-primary.pull-right Post Message
