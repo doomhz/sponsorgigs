@@ -2,6 +2,29 @@ form#new-event-form(action="/events", method="post")
 
   input(type='hidden', name="id", value="#{gig.id || ''}")
 
+  // Contact info
+  .background-white.p30.mb30
+    h3.page-title Contact Info
+    .row
+      .col-sm-6
+        .input-group
+          span.input-group-addon
+            i.fa.fa-user
+          input.form-control(type='text', placeholder='Organizer name', name="organizer", value="#{gig.organizer || ''}")
+        .input-group
+          span.input-group-addon
+            i.fa.fa-phone
+          input.form-control(type='text', placeholder='Phone', name="phone", value="#{gig.phone || ''}")
+      .col-sm-6
+        .input-group
+          span.input-group-addon
+            i.fa.fa-at
+          input.form-control(type='text', placeholder='E-mail', name="email", value="#{gig.email || ''}")
+        .input-group
+          span.input-group-addon
+            i.fa.fa-globe
+          input.form-control(type='text', placeholder='Website', name="site", value="#{gig.site || ''}")
+
   // Event Details
   .background-white.p30.mb30
     h3.page-title Gig Details
@@ -29,29 +52,6 @@ form#new-event-form(action="/events", method="post")
     .form-group
       textarea.form-control.html-editor(placeholder='Event Description', rows='14', name="description")
         | #{gig.description || ''}
-
-  // Contact info
-  .background-white.p30.mb30
-    h3.page-title Contact Info
-    .row
-      .col-sm-6
-        .input-group
-          span.input-group-addon
-            i.fa.fa-user
-          input.form-control(type='text', placeholder='Organizer name', name="organizer", value="#{gig.organizer || ''}")
-        .input-group
-          span.input-group-addon
-            i.fa.fa-phone
-          input.form-control(type='text', placeholder='Phone', name="phone", value="#{gig.phone || ''}")
-      .col-sm-6
-        .input-group
-          span.input-group-addon
-            i.fa.fa-at
-          input.form-control(type='text', placeholder='E-mail', name="email", value="#{gig.email || ''}")
-        .input-group
-          span.input-group-addon
-            i.fa.fa-globe
-          input.form-control(type='text', placeholder='Website', name="site", value="#{gig.site || ''}")
 
   // Social
   .background-white.p30.mb30
