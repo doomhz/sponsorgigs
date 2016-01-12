@@ -71,34 +71,41 @@ module.exports = (app)->
         redirect_url: "/events/edit/#{gig.sid}"
 
   app.post "/invest", (req, res, next)->
+    pid = req.body.pid
     name = req.body.name
     email = req.body.email
     phone = req.body.phone
     contactEmail = GLOBAL.appConfig().contact_email
-    emailData =
-      "user_agent": req.get('User-Agent')
-      "user_ip": req.ip
-      "gig_url": req.get "referrer"
-      "name": name
-      "email": email
-      "phone": phone
-    options =
-      to:
-        email: contactEmail
-      reply_to: email
-      subject: "[new sponsor] #{name} wants to invest"
-      template: "sponsor_message_admin"
-    emailer = new Emailer options, emailData
-    emailer.send (err, result)->
-      console.error err  if err
+    Gig.findByPId pid, (err, gig)->
+      if not gig
+        console.error err
+        res.statusCode = 404
+        return res.json {}
+      emailData =
+        "user_agent": req.get('User-Agent')
+        "user_ip": req.ip
+        "gig_url": "#{GLOBAL.appConfig().app_url}/events/#{gig.pid}/#{gig.slug}"
+        "gig_name": gig.name
+        "name": name
+        "email": email
+        "phone": phone
       options =
         to:
-          email: email
-        reply_to: contactEmail
-        subject: "Thanks for being a sponsor, #{name}!"
-        template: "sponsor_message"
-      emailer2 = new Emailer options, emailData
-      emailer2.send (err, result)->
+          email: contactEmail
+        reply_to: email
+        subject: "[new sponsor] #{name} wants to invest"
+        template: "sponsor_message_admin"
+      emailer = new Emailer options, emailData
+      emailer.send (err, result)->
         console.error err  if err
-    res.json {}
+        options =
+          to:
+            email: email
+          reply_to: contactEmail
+          subject: "Thanks for being a sponsor, #{name}!"
+          template: "sponsor_message"
+        emailer2 = new Emailer options, emailData
+        emailer2.send (err, result)->
+          console.error err  if err
+      res.json {}
 

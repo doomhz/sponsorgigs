@@ -170,6 +170,7 @@ block content
                 p.hidden.bg-message.bg-success
                   | Thanks for showing your interest in the gig above, one of our agents will contact you soon.
                 form#sponsor-invest-form(method='post', action='/invest')
+                  input(type="hidden", name="pid", value="#{gig.pid}")
                   .form-group
                     label(for='')
                       | Name
