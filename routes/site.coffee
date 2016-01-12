@@ -46,11 +46,8 @@ module.exports = (app)->
       template: "contact"
     emailer = new Emailer options, emailData
     emailer.send (err, result)->
-      if err
-        console.error err
-        res.statusCode = 400
-        return res.json {}
-      return res.json {}
+      console.error err if err
+    res.json {}
 
 
   app.get "/ping", (req, res)->
