@@ -64,8 +64,8 @@ module.exports = (app)->
             reply_to: contactEmail
             subject: "Thanks for adding your gig, #{name}!"
             template: "new_gig"
-          emailer = new Emailer options, emailData
-          emailer.send (err, result)->
+          emailer2 = new Emailer options, emailData
+          emailer2.send (err, result)->
             console.error err  if err
       res.json
         redirect_url: "/events/edit/#{gig.sid}"
@@ -97,7 +97,8 @@ module.exports = (app)->
         reply_to: contactEmail
         subject: "Thanks for being a sponsor, #{name}!"
         template: "sponsor_message"
-      emailer = new Emailer options, emailData
-      emailer.send (err, result)->
+      emailer2 = new Emailer options, emailData
+      emailer2.send (err, result)->
+        console.error err  if err
     res.json {}
 
