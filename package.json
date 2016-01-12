@@ -19,6 +19,7 @@
     "underscore": "1.6.0",
     "underscore.string": "2.3.3",
     "date-utils": "1.2.16",
+    "bcrypt": "0.8.5",
     "async": "0.9.0",
     "express-simple-cdn": "1.0.1",
     "mysql": "2.4.1",

@@ -16,13 +16,19 @@ module.exports = (app)->
     res.render "events/add",
       gig: Gig.build()
 
-  app.get "/events/edit/:id", (req, res)->
-    eventId = req.params.id
-    if not parseInt eventId
-      res.statusCode = 400
-      return res.json {}
-    Gig.findById eventId, (err, gig)->
+  app.get "/events/edit/:sid", (req, res)->
+    eventSId = req.params.sid
+    Gig.findBySId eventSId, (err, gig)->
+      return res.redirect "/404"  if not gig
       res.render "events/edit",
+        gig: gig
+
+  app.get "/events/:pid/*", (req, res)->
+    eventPId = req.params.pid
+    Gig.findByPId eventPId, (err, gig)->
+      return res.redirect "/404"  if not gig
+      res.render "events/details",
+        currentPage: "events"
         gig: gig
 
   app.post "/events", (req, res)->
@@ -39,8 +45,8 @@ module.exports = (app)->
         emailData =
           "user_agent": req.get('User-Agent')
           "user_ip": req.ip
-          "gig_edit_url": "#{GLOBAL.appConfig().app_url}/events/edit/#{gig.id}"
-          "gig_url": "#{GLOBAL.appConfig().app_url}/events/#{gig.id}/#{gig.slug}"
+          "gig_edit_url": "#{GLOBAL.appConfig().app_url}/events/edit/#{gig.sid}"
+          "gig_url": "#{GLOBAL.appConfig().app_url}/events/#{gig.pid}/#{gig.slug}"
           "email": email
           "name": name
         options =
@@ -62,15 +68,7 @@ module.exports = (app)->
           emailer.send (err, result)->
             console.error err  if err
       res.json
-        redirect_url: "/events/edit/#{gig.id}"
-
-  app.get "/events/:id/*", (req, res)->
-    eventId = req.params.id
-    Gig.findById eventId, (err, gig)->
-      res.render "events/details",
-        eventId: eventId
-        currentPage: "events"
-        gig: gig
+        redirect_url: "/events/edit/#{gig.sid}"
 
   app.post "/invest", (req, res, next)->
     name = req.body.name
@@ -102,3 +100,4 @@ module.exports = (app)->
       emailer = new Emailer options, emailData
       emailer.send (err, result)->
     res.json {}
+

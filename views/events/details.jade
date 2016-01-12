@@ -68,14 +68,16 @@ block content
             // /.col-sm-7
             .col-sm-5
               .background-white.p20
-                .detail-overview-hearts
-                  i.fa.fa-calendar
-                  strong #{gig.start_date.toFormat('D MMM YYYY')} 
-                  | - #{gig.end_date.toFormat('D MMM YYYY')}
-                .detail-overview-rating
-                  i.fa.fa-users
-                  strong #{gig.visitors} 
-                  | people are attending
+                - if (gig.start_date.toFormat && gig.end_date.toFormat)
+                  .detail-overview-hearts
+                    i.fa.fa-calendar
+                    strong #{gig.start_date.toFormat('D MMM YYYY')} 
+                    | - #{gig.end_date.toFormat('D MMM YYYY')}
+                - if (gig.visitors)
+                  .detail-overview-rating
+                    i.fa.fa-users
+                    strong #{gig.visitors} 
+                    | people are attending
                 .detail-actions.row
                   .col-sm-6
                     a(href="#sponsor-form-cnt").btn.btn-primary.btn-book

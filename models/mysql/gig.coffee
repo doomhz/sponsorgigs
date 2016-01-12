@@ -1,4 +1,6 @@
 AppHelper = require "../../lib/app_helper"
+Crypter   = require "../../lib/crypter"
+crypter   = new Crypter()
 _         = require "underscore"
 _.str     = require "underscore.string"
 
@@ -60,6 +62,12 @@ module.exports = (sequelize, DataTypes) ->
       tableName: "gigs"
       getterMethods:
 
+        pid: ->
+          crypter.encode "gig-public-id-#{@id}"
+
+        sid: ->
+          crypter.encode "gig-secret-id-#{@id}"
+
         logo: ->
           AppHelper.getPic @pics, "logo"
 
@@ -104,6 +112,20 @@ module.exports = (sequelize, DataTypes) ->
 
       classMethods:
 
+        decodePid: (pid)->
+          id = null
+          try
+            id = crypter.decode(pid).replace "gig-public-id-", ""
+          catch
+          id
+
+        decodeSid: (sid)->
+          id = null
+          try
+            id = crypter.decode(sid).replace "gig-secret-id-", ""
+          catch
+          id
+
         findEnabled: (callback = ->)->
           Gig.findAll({where: {status: AppHelper.getGigStatusInt "enabled"}}).complete callback
 
@@ -112,6 +134,14 @@ module.exports = (sequelize, DataTypes) ->
 
         findById: (id, callback = ->)->
           Gig.find(id).complete callback
+
+        findByPId: (pid, callback = ->)->
+          id = Gig.decodePid pid
+          Gig.findById id, callback
+
+        findBySId: (sid, callback = ->)->
+          id = Gig.decodeSid sid
+          Gig.findById id, callback
 
         createOrUpdateFromRequest: (gigData, callback = ->)->
           gigData.geo = "#{gigData.lat}|#{gigData.lng}"
