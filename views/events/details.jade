@@ -91,20 +91,17 @@ block content
                       .share-wrapper
                         ul.share
                           li
-                            i.fa.fa-facebook
-                            |  Facebook
+                            a(href="http://www.facebook.com/sharer.php?u=#{gig.pURL}&description=Sponsor #{encodeURIComponent(gig.title)} on SposnorGigs.com", target="_blank")
+                              i.fa.fa-facebook
+                              |  Facebook
                           li
-                            i.fa.fa-twitter
-                            |  Twitter
+                            a(href="http://twitter.com/home?status=Sponsor encode#{encodeURIComponent(gig.title)} on %23sposnorgigs #{gig.pURL}", target="_blank")
+                              i.fa.fa-twitter
+                              |  Twitter
                           li
-                            i.fa.fa-google-plus
-                            |  Google+
-                          li
-                            i.fa.fa-pinterest
-                            |  Pinterest
-                          li
-                            i.fa.fa-chain
-                            |  Link
+                            a(href="https://plus.google.com/share?url=#{gig.pURL}", target="_blank")
+                              i.fa.fa-google-plus
+                              |  Google+
                   // /.col-sm-6
                 // /.detail-actions
               h2
@@ -201,4 +198,3 @@ block content
         // /.container
       // /.content
     // /.main-inner
-

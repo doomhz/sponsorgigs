@@ -68,6 +68,9 @@ module.exports = (sequelize, DataTypes) ->
         sid: ->
           crypter.encode "gig-secret-id-#{@id}"
 
+        pURL: ->
+          "#{GLOBAL.appConfig().app_url}/events/#{@pid}/#{@slug}"
+
         logo: ->
           AppHelper.getPic @pics, "logo"
 
