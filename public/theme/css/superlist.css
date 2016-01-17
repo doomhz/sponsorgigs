@@ -6800,6 +6800,9 @@ blockquote {
 #events-title-header {
   background-image: url("/img/events_header_3.jpg");
 }
+#about-us-title-header {
+  background-image: url("/img/about_us_header.jpg");
+}
 
 
 .tooltip > .tooltip-inner {

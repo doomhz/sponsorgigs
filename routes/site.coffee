@@ -26,6 +26,10 @@ module.exports = (app)->
     res.render "site/pricing",
       currentPage: "pricing"
 
+  app.get "/about_us", (req, res)->
+    res.render "site/about_us",
+      currentPage: "about_us"
+
   app.post "/contact", (req, res, next)->
     name = req.body.name
     email = req.body.email

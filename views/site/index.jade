@@ -44,13 +44,32 @@ block content
             // /.hero-image-inner
           // /.hero-image
         .container
+          .block.background-white.fullwidth
+            .page-header
+              h1 What we do
+            .row.what-we-do-cnt
+              .col-sm-4.magnifier
+                p Are you looking for a sponsor - for yourself or your event?
+              .col-sm-4.add-user
+                p Just add your details and some nice pictures! Videos are awesome too!
+              .col-sm-4.contact-you-soon
+                p You’re all set! The prospective sponsors will contact you soon!
+            .row.what-we-do-cnt
+              .col-sm-4.event
+                p Are you looking to sponsor an event/talent for your business?
+              .col-sm-4.search
+                p Browse through our lists and pick one that suits you!
+              .col-sm-4.contact-event-manager
+                p Contact the event manager/talent and get the sponsorship started!
+
+        .container
           .page-header
             h1 Most Recent Events
             p
               | Check them out and choose one to invest in!
-
           include ../events/_gigs_list
-          
+
+        .container          
           .block.background-white.fullwidth
             .page-header
               h1 Testimonials
@@ -122,12 +141,4 @@ block content
                     span.contact-info-item
                       i.fa.fa-phone
                       span +1 (650) 924-9925
-                    // /.contact-info-item
-                  // /.contact-info
-                // /.contact-info-wrapper
-              // /.col-*
-            // /.row
-        // /.container
-      // /.content
-    // /.main-inner
 
