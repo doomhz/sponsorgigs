@@ -80,6 +80,12 @@ module.exports = (sequelize, DataTypes) ->
         gallery: ->
           AppHelper.getGallery @pics
 
+        videoHTML: ->
+          return ""  if not @video
+          return @video  if @video.indexOf("<iframe") > -1
+          return '<iframe width="640" height="360" src="' + @video.replace("watch?v=", "embed/") + '" frameborder="0" allowfullscreen=""></iframe>'  if @video.indexOf("youtube.com") > -1
+          ""
+
         slug: ->
           @title.toLowerCase().replace /[^a-z0-9]/g, "-"
 
