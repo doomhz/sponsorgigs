@@ -46,7 +46,7 @@ module.exports = (app)->
           "user_agent": req.get('User-Agent')
           "user_ip": req.ip
           "gig_edit_url": "#{GLOBAL.appConfig().app_url}/events/edit/#{gig.sid}"
-          "gig_url": "#{GLOBAL.appConfig().app_url}/events/#{gig.pid}/#{gig.slug}"
+          "gig_url": gig.pURL
           "email": email
           "name": name
         options =
@@ -84,7 +84,7 @@ module.exports = (app)->
       emailData =
         "user_agent": req.get('User-Agent')
         "user_ip": req.ip
-        "gig_url": "#{GLOBAL.appConfig().app_url}/events/#{gig.pid}/#{gig.slug}"
+        "gig_url": gig.pURL
         "gig_name": gig.name
         "name": name
         "email": email

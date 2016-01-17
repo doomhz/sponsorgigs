@@ -69,9 +69,9 @@ block content
                       .card-simple-background
                         .card-simple-content
                           h2
-                            a(href='/events/#{gig.pid}/#{gig.slug}') #{gig.title}
+                            a(href='#{gig.pURL}') #{gig.title}
                           .card-simple-actions
-                            a.fa.fa-search(href='/events/#{gig.pid}/#{gig.slug}')
+                            a.fa.fa-search(href='#{gig.pURL}')
                           // /.card-simple-actions
                         // /.card-simple-content
                         //- .card-simple-label #{gig.main_tag}
