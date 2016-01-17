@@ -40,6 +40,7 @@ AppHelper =
     link.replace "[#{type}]", ""
 
   thumbURL: (url, width, height)->
+    return ""  if not url
     cloudinary.url url.substr(url.lastIndexOf("/")), {width: width, height: height, crop: "thumb"}
 
 exports = module.exports = AppHelper
