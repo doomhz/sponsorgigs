@@ -1,4 +1,6 @@
-_ = require "underscore"
+_          = require "underscore"
+cloudinary = require "cloudinary"
+cloudinary.config GLOBAL.appConfig().cloudinary
 
 GIG_STATUS =
   enabled: 1
@@ -36,5 +38,8 @@ AppHelper =
       s.indexOf("[#{type}]") > -1
     return ""  if not link
     link.replace "[#{type}]", ""
+
+  thumbURL: (url, width, height)->
+    cloudinary.url url.substr(url.lastIndexOf("/")), {width: width, height: height, crop: "thumb"}
 
 exports = module.exports = AppHelper

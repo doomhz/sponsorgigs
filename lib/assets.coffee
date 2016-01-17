@@ -12,7 +12,7 @@ imgDigestKey = fs.readFileSync(process.cwd() + "/img.digest", "utf8")
 assetsHost   = GLOBAL.appConfig().assets_host or ""
 
 initAssets = (app)->
-  # app.locals.AppHelper      = require("./app_helper")
+  app.locals.AppHelper      = require("./app_helper")
   # app.locals.JsonBeautifier = require("./json_beautifier")
   app.locals._              = require("underscore")
   # app.locals._str           = require("./underscore_string")

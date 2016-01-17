@@ -1,14 +1,14 @@
 $ ->
   handleUpload = (id, options = {})->
     $cnt = $(id)
-    $cnt.find(".upload-gallery").append $.cloudinary.unsigned_upload_tag "event_gallery",
-      cloud_name: "dhz"
+    $cnt.find(".upload-gallery").append $.cloudinary.unsigned_upload_tag CONFIG.cloudinary.uploaderName,
+      cloud_name: CONFIG.cloudinary.cloudName
     .bind "cloudinarydone", (e, data) ->
       $image = $.cloudinary.image data.result.public_id,
-        cloud_name: "dhz"
+        cloud_name: CONFIG.cloudinary.cloudName
         format: 'jpg'
-        width: 160
-        height: 160
+        width: 110
+        height: 90
         crop: 'thumb'
       $image.data "url", data.result.url
       $image.addClass "file-preview-image"
@@ -26,10 +26,10 @@ $ ->
       pics = $cnt.data("pics").split "|"
       for picUrl in pics
         $image = $.cloudinary.image picUrl,
-          cloud_name: "dhz"
+          cloud_name: CONFIG.cloudinary.cloudName
           format: 'jpg'
-          width: 160
-          height: 160
+          width: 110
+          height: 90
           crop: 'thumb'
         $image.data "url", picUrl
         $image.addClass "file-preview-image"

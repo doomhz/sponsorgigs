@@ -24,6 +24,12 @@
       "key": "securekey",
       "algorithm": "aes256"
     },
+    "cloudinary": {
+      "cloud_name": "",
+      "api_key": "",
+      "api_secret": "",
+      "uploader_name": ""
+    },
     "emailer": {
       "enabled": false,
       "host": "http://localhost:5000",
@@ -65,6 +71,12 @@
     "crypter": {
       "key": "securekey",
       "algorithm": "aes256"
+    },
+    "cloudinary": {
+      "cloud_name": "",
+      "api_key": "",
+      "api_secret": "",
+      "uploader_name": ""
     },
     "emailer": {
       "enabled": true,

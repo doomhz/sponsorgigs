@@ -48,29 +48,8 @@ block content
             h1 Most Recent Events
             p
               | Check them out and choose one to invest in!
-          // /.page-header
-          .cards-simple-wrapper
-            .row
-              - if (gigs.length > 0)
-                - each gig in gigs
-                  .col-sm-6.col-md-4.col-lg-3
-                    .card-simple(data-background-image="#{gig.header}", style='background-image: url(#{gig.header}')
-                      .card-simple-background
-                        .card-simple-content
-                          h2
-                            a(href='/events/#{gig.pid}/#{gig.slug}') #{gig.title}
-                          .card-simple-actions
-                            a.fa.fa-search(href='/events/#{gig.pid}/#{gig.slug}')
-                          // /.card-simple-actions
-                        // /.card-simple-content
-                        .card-simple-label #{gig.main_tag}
-                      // /.card-simple-background
-                    // /.card-simple
-                  // /.col-*
-              - else
-                p Sorry, no gigs yet...
-            // /.row
-          // /.cards-simple-wrapper
+
+          include ../events/_gigs_list
           
           .block.background-white.fullwidth
             .page-header
