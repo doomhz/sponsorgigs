@@ -94,3 +94,24 @@ $ ->
       error: ->
         alert "Could not send message, please contact support."
 
+  $gigBanner = $('#gig-banner')
+  if $gigBanner.length
+    $window = $(window)
+    $body = $('body')
+    setTimeout (->
+      adjustWindow()
+      return
+    ), 800
+
+    adjustWindow = ->
+      s = skrollr.init(render: (data) ->
+        #Debugging - Log the current scroll position.
+        #console.log(data.curTop);
+        return
+      )
+      winH = $window.height()
+      if winH <= 550
+        winH = 550
+      $gigBanner.height winH
+      s.refresh $('#gig-banner')
+      return

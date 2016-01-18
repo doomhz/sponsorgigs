@@ -5,22 +5,20 @@ block content
     .main-inner
       .content
         .mt-80.mb80
-          .detail-banner(style='background-image: url(#{gig.header});')
-            .container
-              .detail-banner-left
-                h2.detail-title
-                  | #{gig.title}
-                .detail-banner-address
-                  i.fa.fa-map-o
-                  | #{gig.location}
-                // /.detail-banner-address
-                a(href="#sponsor-form-cnt").detail-banner-btn
-                  i.fa.fa-usd
-                    |  Invest Now
-                // /.detail-claim
-              // /.detail-banner-left
-            // /.container
-          // /.detail-banner
+          #gig-banner
+            .detail-banner.bcg(style='background-image: url(#{gig.header});', data-center="background-position: 50% 0px;", data-top-bottom="background-position: 50% -100px;", data-anchor-target="#gig-banner")
+              .container.hsContainer
+                .hsContent(data-center="opacity: 1", data-106-top="opacity: 0", data-anchor-target="#gig-banner .detail-banner-left")
+                  .detail-banner-left
+                    h2.detail-title
+                      | #{gig.title}
+                    .detail-banner-address
+                      i.fa.fa-map-o
+                      | #{gig.location}
+                    // /.detail-banner-address
+                    a(href="#sponsor-form-cnt").detail-banner-btn
+                      i.fa.fa-usd
+                        |  Invest Now
 
         .container
           .row.detail-content
@@ -191,3 +189,4 @@ block content
                     i.fa.fa-usd
                     | Become a sponsor
               // /.detail-enquire-form
+
