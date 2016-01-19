@@ -1,6 +1,7 @@
-Gig     = GLOBAL.db.Gig
-Emailer = require "../lib/emailer"
-_       = require "underscore"
+Gig          = GLOBAL.db.Gig
+Emailer      = require "../lib/emailer"
+JsonRenderer = require "../lib/json_renderer"
+_            = require "underscore"
 
 module.exports = (app)->
 
@@ -34,10 +35,7 @@ module.exports = (app)->
   app.post "/events", (req, res)->
     gigData = req.body
     Gig.createOrUpdateFromRequest gigData, (err, gig)->
-      if err
-        console.error err
-        res.statusCode = 400
-        return res.json {}
+      return JsonRenderer.sqlError err, res  if err
       if not gigData.id
         contactEmail = GLOBAL.appConfig().contact_email
         email = gig.email
@@ -108,4 +106,3 @@ module.exports = (app)->
         emailer2.send (err, result)->
           console.error err  if err
       res.json {}
-

@@ -10,6 +10,8 @@ module.exports = (sequelize, DataTypes) ->
       title:
         type: DataTypes.STRING
         allowNull: true
+        validate:
+          len: [5, 250]
       location:
         type: DataTypes.STRING
         allowNull: true
@@ -22,12 +24,17 @@ module.exports = (sequelize, DataTypes) ->
       email:
         type: DataTypes.STRING
         allowNull: true
+        validate:
+          isEmail:
+            msg: "Please provide a valid email."
       phone:
         type: DataTypes.STRING
         allowNull: true
       organizer:
         type: DataTypes.STRING
         allowNull: true
+        validate:
+          len: [3, 50]
       start_date:
         type: DataTypes.DATE
       end_date:
@@ -35,6 +42,8 @@ module.exports = (sequelize, DataTypes) ->
       tags:
         type: DataTypes.STRING
         allowNull: true
+        validate:
+          len: [3, 250]
       visitors:
         type: DataTypes.STRING
         allowNull: true

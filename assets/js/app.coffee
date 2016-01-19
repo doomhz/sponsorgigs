@@ -60,8 +60,8 @@ $ ->
       dataType: "json"
       success: (response)->
         window.location = response.redirect_url
-      error: ->
-        alert "Could not add event, please contact support."
+      error: (xhr)->
+        alert "Please submit a valid title, name, email and tags."
 
   $("#new-event-form").find("input").on "keypress", (event)->
     return event.keyCode != 13
@@ -96,22 +96,28 @@ $ ->
 
   $gigBanner = $('#gig-banner')
   if $gigBanner.length
-    $window = $(window)
-    $body = $('body')
-    setTimeout (->
-      adjustWindow()
-      return
-    ), 800
-
-    adjustWindow = ->
-      s = skrollr.init(render: (data) ->
-        #Debugging - Log the current scroll position.
-        #console.log(data.curTop);
+    if /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      $gigBanner.find(".hsContainer").removeClass "hsContainer"
+      $gigBanner.find(".hsContent").removeClass "hsContent"
+      $gigBanner.find(".bcg").removeClass "bcg"
+    else
+      $window = $(window)
+      $body = $('body')
+      setTimeout (->
+        adjustWindow()
         return
-      )
-      winH = $window.height()
-      if winH <= 550
-        winH = 550
-      $gigBanner.height winH
-      s.refresh $('#gig-banner')
-      return
+      ), 800
+
+      adjustWindow = ->
+        s = skrollr.init(render: (data) ->
+          #Debugging - Log the current scroll position.
+          #console.log(data.curTop);
+          return
+        )
+        winH = $window.height()
+        if winH <= 550
+          winH = 550
+        $gigBanner.height winH
+        s.refresh $('#gig-banner')
+        return
+
