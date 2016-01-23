@@ -4,7 +4,7 @@ var express           = require('express');
 var bodyParser        = require('body-parser');
 var methodOverride    = require('method-override');
 var session           = require('express-session');
-// var MySQLSessionStore = require('express-mysql-session');
+var MySQLSessionStore = require('express-mysql-session');
 var cookieParser      = require('cookie-parser');
 var compression       = require('compression');
 var errorhandler      = require('errorhandler');
@@ -22,7 +22,7 @@ GLOBAL.db       = require('./models/mysql/index');
 // Setup express
 var app = express();
 var cookieParser  = cookieParser(GLOBAL.appConfig().session.cookie_secret);
-// var sessionStore = new MySQLSessionStore(GLOBAL.appConfig().mysql)
+var sessionStore = new MySQLSessionStore(GLOBAL.appConfig().mysql)
 
 require("./lib/assets")(app);
 app.enable("trust proxy");
