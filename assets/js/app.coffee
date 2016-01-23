@@ -61,7 +61,6 @@ $ ->
       dataType: "json"
       success: (response)->
         window.location = response.redirect_url
-        $form.find("#gig-submit-button").attr "disabled", false
       error: (xhr)->
         $form.find("#gig-submit-button").attr "disabled", false
         alert "Please submit a valid title, name, email and tags."
