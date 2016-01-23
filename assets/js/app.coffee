@@ -53,6 +53,7 @@ $ ->
       $form.find("#{id} img").each (i, el)->
         url = $(el).data "url"
         $form.prepend "<input type='hidden' name='#{type}[]' value='#{url}'>"
+    $form.find("#gig-submit-button").attr "disabled", true
     $.ajax
       type: "POST"
       url: $form.attr "action"
@@ -60,7 +61,9 @@ $ ->
       dataType: "json"
       success: (response)->
         window.location = response.redirect_url
+        $form.find("#gig-submit-button").attr "disabled", false
       error: (xhr)->
+        $form.find("#gig-submit-button").attr "disabled", false
         alert "Please submit a valid title, name, email and tags."
 
   $("#new-event-form").find("input").on "keypress", (event)->
