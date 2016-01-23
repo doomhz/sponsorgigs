@@ -154,6 +154,11 @@ script.
     menubar: 'edit insert format table',
     cleanup : true,
     cleanup_on_startup : true,
-    verify_html : false
+    verify_html : false,
+    setup: function (editor) {
+      editor.on('change', function () {
+        editor.save();
+      });
+    }
   });
 
