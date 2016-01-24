@@ -30,7 +30,7 @@ block content
                 ul.detail-gallery-index
                   - each pic in gig.gallery
                     li.detail-gallery-list-item.active
-                      a(data-target='#{pic}')
+                      a(data-target='#{AppHelper.thumbURL(pic, 650, 360)}', data-src='#{pic}')
                         img(src='#{AppHelper.thumbURL(pic, 110, 90)}', alt='...')
               // /.detail-gallery
               
