@@ -26,11 +26,11 @@ block content
               .detail-gallery
                 .detail-gallery-preview
                   a.cboxElement(href='#{gig.gallery[0]}')
-                    img(src='#{AppHelper.thumbURL(gig.gallery[0], 650, 360)}')
+                    img(src='#{gig.gallery[0]}', style="max-height:360px")
                 ul.detail-gallery-index
                   - each pic in gig.gallery
                     li.detail-gallery-list-item.active
-                      a(data-target='#{AppHelper.thumbURL(pic, 650, 360)}', data-src='#{pic}')
+                      a(data-target='#{pic}')
                         img(src='#{AppHelper.thumbURL(pic, 110, 90)}', alt='...')
               // /.detail-gallery
               
