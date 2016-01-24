@@ -24,13 +24,13 @@ block content
           .row.detail-content
             .col-sm-7
               .detail-gallery
-                .detail-gallery-preview
-                  a.cboxElement(href='#{gig.gallery[0]}')
-                    img(src='#{gig.gallery[0]}', style="max-height:360px")
+                .detail-gallery-preview.text-center
+                  //- a.cboxElement(href='#{gig.gallery[0]}')
+                  img(src='#{AppHelper.resizeURL(gig.gallery[0], null, 360)}')
                 ul.detail-gallery-index
                   - each pic in gig.gallery
                     li.detail-gallery-list-item.active
-                      a(data-target='#{pic}')
+                      a(data-target='#{AppHelper.resizeURL(pic, null, 360)}')
                         img(src='#{AppHelper.thumbURL(pic, 110, 90)}', alt='...')
               // /.detail-gallery
               

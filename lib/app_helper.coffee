@@ -43,4 +43,12 @@ AppHelper =
     return ""  if not url
     cloudinary.url url.substr(url.lastIndexOf("/")), {width: width, height: height, crop: "thumb"}
 
+  resizeURL: (url, width, height)->
+    return ""  if not url
+    scaleOption =
+      crop: "fit"
+    scaleOption.width = width  if width
+    scaleOption.height = height  if height
+    cloudinary.url url.substr(url.lastIndexOf("/")), scaleOption
+
 exports = module.exports = AppHelper
