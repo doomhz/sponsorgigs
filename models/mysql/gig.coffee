@@ -148,7 +148,14 @@ module.exports = (sequelize, DataTypes) ->
           Gig.findAll({where: {status: AppHelper.getGigStatusInt "enabled"}}).complete callback
 
         findEnabledFirstPage: (callback = ->)->
-          Gig.findAll({where: {status: AppHelper.getGigStatusInt "enabled"}, limit: 8, order: [[created_at: "desc"]]}).complete callback
+          query =
+            where:
+              status: AppHelper.getGigStatusInt "enabled"
+            limit: 8
+            order: [
+              ["created_at", "desc"]
+            ]
+          Gig.findAll(query).complete callback
 
         findById: (id, callback = ->)->
           Gig.find(id).complete callback
