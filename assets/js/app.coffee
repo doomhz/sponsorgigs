@@ -122,4 +122,3 @@ $ ->
         $gigBanner.height winH
         s.refresh $('#gig-banner')
         return
-

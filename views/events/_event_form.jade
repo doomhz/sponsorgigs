@@ -1,4 +1,8 @@
 form#new-event-form(action="/events", method="post")
+  - if (status == 'saved')
+    br
+    p.bg-message.bg-success
+      | Thanks for adding your gig! We'll publish it shortly after our staff reviews it.
 
   input(type='hidden', name="id", value="#{gig.id || ''}")
 

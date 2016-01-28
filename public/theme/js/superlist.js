@@ -100,7 +100,11 @@ $(document).ready(function() {
     /**
      * Colorbox
      */
-    $('.detail-gallery-preview a').colorbox();
+    $('.detail-gallery-list-item .cbox').colorbox({
+        rel:'gallery',
+        maxWidth: $(window).width() - 50,
+        maxHeight: $(window).height() - 50
+    });
 
     /**
      * Detail gallery
@@ -118,9 +122,17 @@ $(document).ready(function() {
     $('.detail-gallery-list-item a').on('click', function(e) {
         e.preventDefault();
         var link = $(this).data('target');
+        var bigPiclink = $(this).data('big-pic');
         $('.detail-gallery-preview img').attr('src', link);
-        $('.detail-gallery-preview a').attr('href', link);
+        $('.detail-gallery-preview a').attr('href', bigPiclink);
     });
+
+    $('.detail-gallery-preview a').on('click', function(e) {
+        e.preventDefault();
+        var link = $(this).attr('href');
+        $('.detail-gallery-list-item .cbox[href="' + link + '"]').click();
+    });
+
 
     /**
      * Listing Detail Map

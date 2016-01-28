@@ -16,6 +16,7 @@ module.exports = (app)->
   app.get "/events/add", (req, res)->
     res.render "events/add",
       gig: Gig.build()
+      status: req.query.status
 
   app.get "/events/edit/:sid", (req, res)->
     eventSId = req.params.sid
@@ -23,6 +24,7 @@ module.exports = (app)->
       return res.redirect "/404"  if not gig
       res.render "events/edit",
         gig: gig
+        status: req.query.status
 
   app.get "/events/:pid/*", (req, res)->
     eventPId = req.params.pid
@@ -66,7 +68,7 @@ module.exports = (app)->
           emailer2.send (err, result)->
             console.error err  if err
       res.json
-        redirect_url: "/events/edit/#{gig.sid}"
+        redirect_url: "/events/edit/#{gig.sid}?status=saved"
 
   app.post "/invest", (req, res, next)->
     pid = req.body.pid

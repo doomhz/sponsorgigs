@@ -25,13 +25,16 @@ block content
             .col-sm-7
               .detail-gallery
                 .detail-gallery-preview.text-center
-                  //- a.cboxElement(href='#{gig.gallery[0]}')
-                  img(src='#{AppHelper.resizeURL(gig.gallery[0], null, 360)}')
+                  a(href='#{gig.gallery[0]}')
+                    img(src='#{AppHelper.resizeURL(gig.gallery[0], null, 360)}')
                 ul.detail-gallery-index
                   - each pic in gig.gallery
                     li.detail-gallery-list-item.active
-                      a(data-target='#{AppHelper.resizeURL(pic, null, 360)}')
-                        img(src='#{AppHelper.thumbURL(pic, 110, 90)}', alt='...')
+                      a(data-target='#{AppHelper.resizeURL(pic, null, 360)}', data-big-pic='#{pic}')
+                        img(src='#{AppHelper.thumbURL(pic, 110, 90)}', alt='#{gig.title}')
+                      a.cbox.hidden(href='#{pic}', rel="gallery") &nbs;
+
+
               // /.detail-gallery
               
               h2 Video
@@ -129,25 +132,31 @@ block content
               h2 Contacts &amp; Organizers
               .background-white.p20
                 .detail-vcard
-                  .detail-logo
-                    img(src='#{gig.logo}')
+                  - if (gig.logo)
+                    .detail-logo
+                      img(src='#{gig.logo}')
                   // /.detail-logo
                   .detail-contact
-                    .detail-contact-name
-                      i.fa.fa-user
-                      | #{gig.organizer}
-                    .detail-contact-email
-                      i.fa.fa-envelope-o
-                      a(href='mailto:#{gig.email}') #{gig.email}
-                    .detail-contact-phone
-                      i.fa.fa-mobile-phone
-                      a(href='tel:#{gig.phone}') #{gig.phone}
-                    .detail-contact-website
-                      i.fa.fa-globe
-                      a(href='#{gig.site_url}', target="_blank") #{gig.site}
-                    .detail-contact-address
-                      i.fa.fa-map-o
-                      | #{gig.location}
+                    - if (gig.organizer)
+                      .detail-contact-name
+                        i.fa.fa-user
+                        | #{gig.organizer}
+                    - if (gig.email)
+                      .detail-contact-email
+                        i.fa.fa-envelope-o
+                        a(href='mailto:#{gig.email}') #{gig.email}
+                    - if (gig.phone)
+                      .detail-contact-phone
+                        i.fa.fa-mobile-phone
+                        a(href='tel:#{gig.phone}') #{gig.phone}
+                    - if (gig.site)
+                      .detail-contact-website
+                        i.fa.fa-globe
+                        a(href='#{gig.site_url}', target="_blank") #{gig.site}
+                    - if (gig.location)
+                      .detail-contact-address
+                        i.fa.fa-map-o
+                        | #{gig.location}
                   // /.detail-contact
                 // /.detail-vcard
 
